@@ -44,7 +44,7 @@ public class Titulo {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public void exibeFilme() {
+    public void exibirFichaTecnica() {
         System.out.println("Filme: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
         System.out.println("Duração: " + duracaoEmMinutos + " min");
