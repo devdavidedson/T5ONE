@@ -4,23 +4,43 @@ import br.com.alura.streammacth.modelos.Episodios;
 import br.com.alura.streammacth.modelos.Filme;
 import br.com.alura.streammacth.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
+        //Objetos
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
         Filme filme1 = new Filme();
+        Filme filme2 = new Filme();
+        Filme filme3 = new Filme();
+        Serie heros = new Serie();
+        Episodios episodio = new Episodios();
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+
+        //Filmes
+
+            //Filme - 1
         filme1.setNome("Milagre da cela 5");
         filme1.setAnoDeLancamento(2018);
         filme1.setDuracaoEmMinutos(185);
         filme1.setIncluidoNoPlano(true);
 
-        filme1.exibirFichaTecnica();
-        filme1.somaDasAvaliacoes(8);
-        filme1.somaDasAvaliacoes(10);
-        filme1.somaDasAvaliacoes(6);
+            //Filme - 2
+        filme2.setNome("Super Mario");
+        filme2.setAnoDeLancamento(2023);
+        filme2.setDuracaoEmMinutos(95);
+        filme2.setIncluidoNoPlano(true);
 
-        System.out.println("A nota do filme é: " + filme1.calcularMedia());
-        System.out.println("Filme Avaliado por: " + filme1.getTotalDeAvaliacoes() + " usuários");
+            //filme - 3
+        filme3.setNome("Guardiões da Galaxia III");
+        filme3.setAnoDeLancamento(2023);
+        filme3.setDuracaoEmMinutos(185);
+        filme3.setIncluidoNoPlano(false);
 
-        Serie heros = new Serie();
+        //Series
+
         heros.setNome("Heroes");
         heros.setAnoDeLancamento(2006);
         heros.setDuracaoEmMinutos(300);
@@ -28,29 +48,40 @@ public class Principal {
         heros.setIncluidoNoPlano(true);
         heros.setEpisodiosPorTemporada(8);
         heros.setMinutosPorEpisodio(44);
-        heros.exibirFichaTecnica();
-        System.out.println("Para maratorna leva: " + heros.getDuracaoEmMinutos() + " min");
 
-        Filme filme2 = new Filme();
-        filme2.setNome("Super Mario");
-        filme2.setAnoDeLancamento(2023);
-        filme2.setDuracaoEmMinutos(95);
-        filme2.setIncluidoNoPlano(true);
+        //Episodios
 
-        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-        calculadora.inclui(filme1);
-        calculadora.inclui(filme2);
-        System.out.println(calculadora.getTempoTotal());
-
-        FiltroRecomendacao filtro = new FiltroRecomendacao();
-        filtro.filtra(filme1);
-
-        Episodios episodio = new Episodios();
         episodio.setNome("A Lua Sangrenta");
         episodio.setSerie(heros);
         episodio.setNumero(5);
         episodio.setTotalDeVisualizacoes(80);
         filtro.filtra(episodio);
+
+        //chamadas
+
+        filme1.exibirFichaTecnica();
+        filme1.somaDasAvaliacoes(8);
+        filme1.somaDasAvaliacoes(10);
+        filme1.somaDasAvaliacoes(6);
+        System.out.println("A nota do filme é: " + filme1.calcularMedia());
+        System.out.println("Filme Avaliado por: " + filme1.getTotalDeAvaliacoes() + " usuários");
+
+        heros.exibirFichaTecnica();
+        System.out.println("Para maratorna leva: " + heros.getDuracaoEmMinutos() + " min");
+
+        calculadora.inclui(filme1);
+        calculadora.inclui(filme2);
+        System.out.println(calculadora.getTempoTotal());
+
+        filtro.filtra(filme1);
+
+        listaDeFilmes.add(filme1);
+        listaDeFilmes.add(filme2);
+        listaDeFilmes.add(filme3);
+        System.out.println("Tamanho da Lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(2).getNome());
+
+        System.out.println(listaDeFilmes);
 
     }
 }
