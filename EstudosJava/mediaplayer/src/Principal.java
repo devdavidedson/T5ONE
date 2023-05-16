@@ -5,15 +5,13 @@ public class Principal {
 
         Media media = new Media();
         media.setNome("Breaking the habbit");
-        media.setEstilo("Rock");
+        media.setEstilo("musica");
         media.setTempoDeDuracao(3.55);
         media.setCurtidas(1500);
         media.setReproduzir(true);
 
-        System.out.println("Música: " + media.getNome());
-        System.out.println("Estilo: " + media.getEstilo());
-        System.out.println("Duração: " + media.getTempoDeDuracao() + " min.");
+        media.fichaTecnica();
         media.play();
-        System.out.println("a Música tem " + media.getCurtidas() + " curtidas");
+
     }
 }

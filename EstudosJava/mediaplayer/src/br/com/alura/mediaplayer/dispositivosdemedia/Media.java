@@ -10,7 +10,7 @@ public class Media {
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome = nome;}
     public String getEstilo() {return estilo;}
-    public void setEstilo(String estilo) {this.estilo = estilo;}
+    public String setEstilo(String estilo) {return this.estilo = estilo;}
     public double getTempoDeDuracao() {return tempoDeDuracao;}
     public void setTempoDeDuracao(double tempoDeDuracao) {this.tempoDeDuracao = tempoDeDuracao;}
     public int getCurtidas() {return curtidas;}
@@ -23,5 +23,12 @@ public class Media {
         } else {
             System.out.println("O Player não está tocando");
         }
+    }
+
+    public void fichaTecnica() {
+        System.out.println("Música: " + getNome());
+        System.out.println("Estilo: " + getEstilo());
+        System.out.println("Duração: " + getTempoDeDuracao() + " min.");
+        System.out.println("a Música tem " + getCurtidas() + " curtidas");
     }
 }
