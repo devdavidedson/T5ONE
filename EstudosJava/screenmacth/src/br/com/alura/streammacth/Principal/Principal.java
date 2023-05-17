@@ -1,3 +1,5 @@
+package br.com.alura.streammacth.Principal;
+
 import br.com.alura.streammacth.calculos.CalculadoraDeTempo;
 import br.com.alura.streammacth.calculos.FiltroRecomendacao;
 import br.com.alura.streammacth.modelos.Episodios;
