@@ -11,30 +11,27 @@ public class Principal {
         //Objetos
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
-        Filme filme1 = new Filme();
-        Filme filme2 = new Filme();
-        Filme filme3 = new Filme();
+
+        Filme filme2 = new Filme("Super Mario");
+        Filme filme3 = new Filme("Guardiões da Galaxia III");
         Serie heros = new Serie();
         Episodios episodio = new Episodios();
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
 
         //Filmes
-
-            //Filme - 1
-        filme1.setNome("Milagre da cela 5");
+        //Filme - 1
+        Filme filme1 = new Filme("Milagre da cela 5");
         filme1.setAnoDeLancamento(2018);
         filme1.setDuracaoEmMinutos(185);
         filme1.setIncluidoNoPlano(true);
 
             //Filme - 2
-        filme2.setNome("Super Mario");
         filme2.setAnoDeLancamento(2023);
         filme2.setDuracaoEmMinutos(95);
         filme2.setIncluidoNoPlano(true);
 
             //filme - 3
-        filme3.setNome("Guardiões da Galaxia III");
         filme3.setAnoDeLancamento(2023);
         filme3.setDuracaoEmMinutos(185);
         filme3.setIncluidoNoPlano(false);
