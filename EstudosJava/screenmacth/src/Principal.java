@@ -11,35 +11,29 @@ public class Principal {
         //Objetos
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
-
-        Filme filme2 = new Filme("Super Mario");
-        Filme filme3 = new Filme("Guardiões da Galaxia III");
-        Serie heros = new Serie();
-        Episodios episodio = new Episodios();
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
 
         //Filmes
-        //Filme - 1
-        Filme filme1 = new Filme("Milagre da cela 5");
-        filme1.setAnoDeLancamento(2018);
+           //Filme - 1
+        Filme filme1 = new Filme("Milagre da cela 5", 2018);
         filme1.setDuracaoEmMinutos(185);
         filme1.setIncluidoNoPlano(true);
 
             //Filme - 2
-        filme2.setAnoDeLancamento(2023);
+        Filme filme2 = new Filme("Super Mario", 2023);
         filme2.setDuracaoEmMinutos(95);
         filme2.setIncluidoNoPlano(true);
 
             //filme - 3
-        filme3.setAnoDeLancamento(2023);
+        Filme filme3 = new Filme("Guardiões da Galaxia III", 2023);
         filme3.setDuracaoEmMinutos(185);
         filme3.setIncluidoNoPlano(false);
 
         //Series
 
-        heros.setNome("Heroes");
-        heros.setAnoDeLancamento(2006);
+            //Serie-1
+        Serie heros = new Serie("Heroes", 2006);
         heros.setDuracaoEmMinutos(300);
         heros.setTemporadas(6);
         heros.setIncluidoNoPlano(true);
@@ -47,7 +41,8 @@ public class Principal {
         heros.setMinutosPorEpisodio(44);
 
         //Episodios
-
+            //Episodio-1
+        Episodios episodio = new Episodios();
         episodio.setNome("A Lua Sangrenta");
         episodio.setSerie(heros);
         episodio.setNumero(5);
