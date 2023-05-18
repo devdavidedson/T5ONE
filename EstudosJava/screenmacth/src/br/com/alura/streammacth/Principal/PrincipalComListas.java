@@ -5,6 +5,7 @@ import br.com.alura.streammacth.modelos.Serie;
 import br.com.alura.streammacth.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -22,16 +23,28 @@ public class PrincipalComListas {
         lista.add(filme3);
         lista.add(heros);
 
-        for (Titulo item: lista) {
-            System.out.println(item.getNome());
-            //para chamar um metodo exclusivo de filme eu preciso declarar o instanceof
-            if(item instanceof Filme filme /* && Aqui podemos colocar verificadores*/) {
+        for (Titulo item : lista) {
+            System.out.println(item);
+            /*//para chamar um metodo exclusivo de filme eu preciso declarar o instanceof
+            if(item instanceof Filme filme *//* && Aqui podemos colocar verificadores*//*) {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
+        }*/
+
+            //lista.forEach(item -> System.out.println(item.getNome()));
+            //lista.forEach(System.out::println);
+
         }
 
-        //lista.forEach(item -> System.out.println(item.getNome()));
-        //lista.forEach(System.out::println);
-        
+        ArrayList<String> listaDeAtores = new ArrayList<>();
+        listaDeAtores.add("Batman");
+        listaDeAtores.add("Thor");
+        listaDeAtores.add("Flash");
+        listaDeAtores.add("Miguel");
+        listaDeAtores.add("Ana Ive");
+
+        Collections.sort(listaDeAtores);
+
+        System.out.println("Nome dos atores:" + listaDeAtores);
     }
 }
