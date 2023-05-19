@@ -25,16 +25,14 @@ public class PrincipalComListas {
 
         for (Titulo item : lista) {
             System.out.println(item);
-            /*//para chamar um metodo exclusivo de filme eu preciso declarar o instanceof
-            if(item instanceof Filme filme *//* && Aqui podemos colocar verificadores*//*) {
+            //para chamar um metodo exclusivo de filme eu preciso declarar o instanceof
+            if(item instanceof Filme filme /* && Aqui podemos colocar verificadores */) {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
-        }*/
+        }
 
             //lista.forEach(item -> System.out.println(item.getNome()));
             //lista.forEach(System.out::println);
-
-        }
 
         ArrayList<String> listaDeAtores = new ArrayList<>();
         listaDeAtores.add("Batman");
@@ -46,5 +44,8 @@ public class PrincipalComListas {
         Collections.sort(listaDeAtores);
 
         System.out.println("Nome dos atores:" + listaDeAtores);
+        Collections.sort(lista);
+        System.out.println("LISTA DE TITULO EM ORDEM");
+        System.out.println(lista);
     }
 }
