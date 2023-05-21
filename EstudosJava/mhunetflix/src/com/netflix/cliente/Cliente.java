@@ -2,7 +2,7 @@ package com.netflix.cliente;
 
 public class Cliente {
     private String nome;
-    private boolean contaAtiva;
+    private boolean contaAtiva = false;
     private String aparelho;
     private String email;
 
@@ -39,6 +39,6 @@ public class Cliente {
     public void exibeDados () {
         System.out.println("Nome: " + getNome());
         System.out.println("Tipo de aparelho " + getAparelho());
-        System.out.println("Nome: " + getEmail());
+        System.out.println("Email: " + getEmail());
     }
 }
