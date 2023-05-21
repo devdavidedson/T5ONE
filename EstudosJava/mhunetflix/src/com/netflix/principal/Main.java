@@ -13,12 +13,11 @@ public class Main {
 
         Cliente micarla = new Cliente();
         micarla.setNome("Micarla");
-        micarla.setAparelho("TV Smart");
         micarla.setEmail("clientemicarla@netflix.com.br");
 
         Operadores operador = new Operadores();
         System.out.println(operador.getApresentacao());
-        System.out.println("Sou sua agente Netflix Fabielly, Boa noite estou verificando sua conta!");
+        System.out.println("Sou sua agente Netflix Fabielly, Boa noite estou verificando sua conta!\n");
         System.out.println("""
                 verificando dados da conta...
                 localizado...
