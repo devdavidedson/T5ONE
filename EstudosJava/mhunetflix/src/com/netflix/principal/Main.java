@@ -11,6 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ErrosCliente erro = new ErrosCliente();
 
+
         Cliente micarla = new Cliente();
         micarla.setNome("Micarla");
         micarla.setEmail("clientemicarla@netflix.com.br");
