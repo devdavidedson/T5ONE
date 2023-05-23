@@ -4,6 +4,15 @@ public class Cliente {
     private String nome;
     private boolean contaAtiva = true;
     private String email;
+    private String agente;
+
+    public String getAgente() {
+        return agente;
+    }
+
+    public void setAgente(String agente) {
+        this.agente = agente;
+    }
 
     public String getEmail() {
         return email;
@@ -28,9 +37,12 @@ public class Cliente {
         this.contaAtiva = contaAtiva;
     }
 
-    public void exibeDados () {
+    public void exibeDados() {
         System.out.println("Nome: " + getNome());
         System.out.println("Email: " + getEmail());
+    }
+    public void exibeDadosAgente() {
+        System.out.println("\n" + getAgente() + ": Pronto estou com sua conta, em que posso ajudar?\n");
     }
 
 }
