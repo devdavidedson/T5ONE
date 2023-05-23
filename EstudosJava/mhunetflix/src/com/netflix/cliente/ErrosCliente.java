@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class ErrosCliente extends Cliente {
     Scanner scanner = new Scanner(System.in);
-    private int sorteio = new Random().nextInt(5);
+    private int sorteio = new Random().nextInt(4);
     private int respostaAgente = 0;
     private String menuResposta = "\ndigite 1 ou 2 para selecionar opção:";
     private String erro1 = """
-            Cliente: Estou com um erro na minha Netflix, aparece que eu não estou na minha
+            Cliente: Estou com um erro na minha Netflix, aparece que eu não estou na
             localização principal, fala que não é minha Residência. Mas aqui é a
             minha residência! Eu sempre assisti daqui.
             """;
@@ -21,32 +21,34 @@ public class ErrosCliente extends Cliente {
             """;
     private String erro3 = "Cliente: Minha irmã usa minha Netflix, eu vou ter que fazer um assinante extra?";
     private String erro4 = """
-            Cliente: Eu vou viajar e vou demorar para voltar, na minha casa
-            só vai ficar meu filho e ele só acessa a Netflix pelo celular! Como faço?
+            Eu uso a Netflix que assinei aqui pra casa, na minha Loja,
+            agora não vou poder mais usar?!
             """;
     private String erro5 = """
             Cliente: Oi, tudo bem? eu queria saber por que na casa da minha prima não está
             mais funcionando a minha Netflix? Ela usa minha conta lá a muito tempo.
             Meu plano é o de R$39,90.
             """;
-    private String investigar1 = "Agente: Em que tipo de aparelho que você usa a Netflix?";
+    private String investigar1 = "Agente: Quem é o titular da conta Netflix?";
     private String investigar2 = "Agente: Mais alguém usa a sua conta Netflix?";
     private String investigar3 = "Agente: Quanto tempo você pretende ficar viajando?";
-    private String investigar4 = "Agente: Quais são os aparelhos em que você irá assistir na viajem?";
-    private String investigar5 = "Agente: Quem é o titular da conta?";
+    private String investigar4 = "Agente: Quais são os aparelhos em que você irá assistir?";
+    private String investigar5 = "Agente: Basta fazer um check-in?";
     private String investigar6 = "Agente: Em que aparelhos você e sua irmã usam a Netflix?";
     private String investigar7 = "Agente: me fala em quais aparelhos ela(e) assiste.";
     private String investigar8 = "Agente: Ela vai ter que fazer um assinante extra.";
 
-    private String resolucao1 = "Agente: Sua mãe assiste no mesmo endereço usando seu Wifi ou em outro endereço?";
     private String resolucao1de1 = "Sua mãe deve ter definido o endereço dela como sendo o principal da conta.";
-    private String resolucao2 = "Agente: O outro endereço foi definido como Residência Netflix por isso que não deu problema.";
 
-    private String residenciaNetflix = "Agente: Foi colocado na  outra Smart TV como sendo a Residencia Netflix, por isso que você não consegue acessar.";
-    private String resolucaoResidencia = "Agente: Então vamos colocar sua residência como Localização principal na Residência Netflix (KB 128777).";
+    private String residenciaNetflix = "Agente: Foi colocado em outra Smart TV como sendo a Residencia Netflix, por isso que você não consegue acessar.";
+    private String resolucaoResidencia = "Agente: Só precisamos colocar sua SMART-TV como Localização principal na Residência Netflix (KB 128777).";
     private String assinanteExtra = "Agente: podemos criar um assinante extra. (KB 124633)";
     private String localizacaoPrincipal = "Agente: Posso ajudar você a definir sua localização principal.";
-    private String checkIn = "Agente: Para fazer o check-in você precisa entrar na Netflix no WiFi onde sua Smart TV definiu Residência Netflix";
+    private String checkIn = """
+            Agente: Para fazer o check-in você precisa entrar na Netflix no WiFi onde sua Smart TV definiu Residência Netflix
+            depois é só ir na local onde precisa liberar, conectar seu Celular o Wifi de lá e entrar na Netflix no celular.
+            Pronto, depois desse processo você pode usar normalmente. Lembrando que tem que ser algo periódico.         
+            """;
     private String assinanteExtraExplicacao = """
             Agente: o assinante extra é uma conta extra dentro da sua conta, onde 
             o "agregado" vai criar a conta dele com email dele e vincular a sua conta.
@@ -65,7 +67,6 @@ public class ErrosCliente extends Cliente {
             """;
 
     public void iniciaLigacao() {
-        int sorteio = 3;
 
         while (getContaAtiva()) {
             if (sorteio == 1) {
@@ -75,56 +76,54 @@ public class ErrosCliente extends Cliente {
                 System.out.println(menuResposta);
                 respostaAgente = scanner.nextInt();
                 //primeiro laço.
-                if (respostaAgente == 1) {
-                    System.out.println("\nResposta: Eu uso na TV, minha mãe tem minha Netflix e ta normal lá\n");
-                    System.out.println("1- " + resolucao1);
-                    System.out.println("2- " + resolucao2);
+                if (respostaAgente == 1) { //primeiro IF do 1
+                    System.out.println("\nCliente: Sou eu a dona da conta.\n");
+                    System.out.println("1- " + investigar2);
+                    System.out.println("2- " + residenciaNetflix);
                     System.out.println(menuResposta);
                     respostaAgente = scanner.nextInt();
                     //primeiro laço interno
-                    if (respostaAgente == 1) {
-                        System.out.println("\nResposta: É na casa dela, na TV Smart dela...\n");
+                    if (respostaAgente == 1) { // segundo IF do 1
+                        System.out.println("\nResposta: Eu e minha mãe usamos, ela tem um ponto na casa dela.\n");
                         System.out.println(residenciaNetflix);
                         System.out.println(assinanteExtra);
-                        System.out.println("\nCliente: Ai se eu fizer assinante extra vou poder assistir eu e ela?\n");
-                        System.out.println("\n1- Sim, basta criar um assinante Extra que já vão poder usar juntas.");
-                        System.out.println("2- ***AGENTE EXPLICA O ASSINANTE EXTRA***");
                         System.out.println(menuResposta);
                         respostaAgente = scanner.nextInt();
-                        if (respostaAgente == 1) {
-                            System.out.println(assinanteExtraExplicacao);
-                            System.out.println("\nCliente: ficou tudo explicadinho, então vou fazer um assinante extra, mas vai ser no email dela.");
+                        if (respostaAgente == 1) { //terceiro IF do 1
+                            System.out.println("\nCliente: Como eu faço pra voltar a assistir?");
                             System.out.println("\n1- " + resolucaoResidencia);
-                            System.out.println("2- Vamos lá vou te ajudar a criar o assinante extra.");
+                            System.out.println("2- Agente: Vamos lá vou te ajudar a criar o assinante extra.");
                             System.out.println(menuResposta);
                             respostaAgente = scanner.nextInt();
-                            if (respostaAgente == 1) {
-                                System.out.println("Cliente: Entendi, pq como é no email dela, a minha tem que ser a principal!");
+                            if (respostaAgente == 1) { // QUARTO IF do 1
+                                System.out.println("Cliente: OK! vamos fazer isso então...");
                                 System.out.println(encerramento);
-                                System.out.println("\nRafael Arduini: PARABÉNS!!! Alinhou sobre a principal.");
-                                System.out.println("Tirou as dúvidas da cliente com paciência.");
-                                System.out.println("Deixando uma resolução clara e limpa!");
-                                System.out.println(elogio);
-                            } else {
+                                System.out.println("\nRafael Arduini: Você como agente tem que deixar claro para o cliente");
+                                System.out.println("as Opções e as consequencias de tudo. Ela vai mudar a Residência Netflix e");
+                                System.out.println("a mãe dela vai perder o acesso!\n");
+                                System.out.println(detalheInvestigacao);
+                                System.out.println("Tomou aquele RCR de milhões.");
+                            } else { // QUARTO ELSE do 1
                                 System.out.println("Cliente: Sim vamos criar um por favor!");
                                 System.out.println("\nRafael Arduini: Aqui você cria o assinante extra de forma majestosa.");
                                 System.out.println("Porém toma um RCR de MILHÕES por que não ajustou a Residência Netflix.");
                                 System.out.println("Ela era a Titular da conta e criou no email da mãe dela e mesmo assim não conseguiu acesso");
                                 System.out.println("***MUITA atenção as perguntas de investigação***");
                             }
-                        } else {
+                        } else { //TERCEIRO ELSE DO 1
                             System.out.println(assinanteExtraExplicacao);
-                            System.out.println("1- Você quer criar o Assinante extra?");
-                            System.out.println("2- Ou você pode ficar assistindo de aparelhos móveis que é liberado.");
+                            System.out.println("1- Agente: Você quer criar o Assinante extra?");
+                            System.out.println("2- Agente: Ou você pode ficar assistindo de aparelhos móveis que é liberado.");
                             System.out.println(menuResposta);
                             respostaAgente = scanner.nextInt();
-                            if (respostaAgente == 1) {
+                            if (respostaAgente == 1) { // TERCEIRO ELSE DO 1 primeiro IF
                                 System.out.println("Cliente: Sim vamos criar um por favor!");
                                 System.out.println("\nRafael Arduini: Aqui você cria o assinante extra de forma majestosa.");
                                 System.out.println("Porém toma um RCR de MILHÕES por que não ajustou a Residência Netflix.");
-                                System.out.println("Ela era a Titular da conta e criou no email da mãe dela e mesmo assim não conseguiu acesso");
+                                System.out.println("Ela era a Titular da conta e criou no email da mãe e mesmo assim não conseguiu acesso");
+                                System.out.println("por que a mãe dela que deveria ser a Assinante Extra.");
                                 System.out.println(detalheInvestigacao);
-                            } else {
+                            } else { // TERCEIRO ELSE DO 1 PRIMEIRO ELSE
                                 System.out.println("Rafael Arduini: Você deve se atentar que a cliente ligou com erro");
                                 System.out.println("de Residência Netflix > Localização principal, então ela quer");
                                 System.out.println("Assistir na TV. (APARELHO MÓVEL NÃO PRECISA DE LOCALIZAÇÃO!");
@@ -132,34 +131,43 @@ public class ErrosCliente extends Cliente {
                             }
                         }
 
-                    } else {
-                        System.out.println("\nResposta: Eu e minha mãe, mas na casa dela ta NORMAL!\n");
-                        System.out.println(residenciaNetflix);
-                        System.out.println(assinanteExtra);
-                        System.out.println(localizacaoPrincipal);
-                        System.out.println("Cliente: Ai se eu fizer assinante extra vou poder assistir eu e ela?\n");
-                        System.out.println(assinanteExtraExplicacao);
-                        System.out.println("\nCliente: ficou tudo explicadinho, então vou fazer um assinante extra, mas vai ser no email dela.");
-                        System.out.println(resolucaoResidencia);
-                        System.out.println("\nPARABÉN, Cliente satisfeiro 0 RCR e 100 de CRES e CSAT!");
-
+                    } else { // SEGUNDO ELSE DO 1
+                        System.out.println("\nResposta: Eu e minha mãe usamos, mas na casa dela ta NORMAL!\n");
+                        System.out.println("1- Agente: Então podemos criar um Assinante extra para ela e definir você como localização principal.");
+                        System.out.println("2- " + assinanteExtra);
+                        System.out.println("3- " + localizacaoPrincipal);
+                        if (respostaAgente == 1) {
+                            System.out.println("Rafael Arduini: Parabéns, conseguiu ajudar o cliente da melhor forma!");
+                            System.out.println("Colocou a Titular como Residência Netflix e os demais como Assinante Extra.");
+                            System.out.println(elogio);
+                        } else if (respostaAgente == 2) {
+                            System.out.println("Cliente: Sim vamos criar um por favor!");
+                            System.out.println("\nRafael Arduini: Aqui você cria o assinante extra de forma majestosa.");
+                            System.out.println("Porém toma um RCR de MILHÕES por que não ajustou a Residência Netflix.");
+                            System.out.println("Ela era a Titular da conta e criou no email da mãe e mesmo assim não conseguiu acesso");
+                            System.out.println("por que a mãe dela que deveria ser a Assinante Extra.");
+                            System.out.println(detalheInvestigacao);
+                        } else {
+                            System.out.println("Cliente: Sim vamos definir por favor!");
+                            System.out.println("\nRafael Arduini: Aqui você defini a localização de forma majestosa.");
+                            System.out.println("Porém toma um RCR de MILHÕES por que não ajustou a casa da mãe dela, nem ofereceu Assinante Extra na mãe.");
+                            System.out.println(detalheInvestigacao);
+                        }
                     }// Final do primeiro laço internet.
                     //final do primeiro laço
-                } else {
+                } else { // PRIMEIRO ELSE DO LAÇO 2
                     System.out.println("Cliente: Assiste eu na minha casa e minha mãe na casa dela, mas moça na minha mãe ta NORMAL!");
                     System.out.println("1- " + resolucao1de1);
-                    System.out.println("2- " + resolucao2);
+                    System.out.println("2- " + investigar1);
                     System.out.println(menuResposta);
                     respostaAgente = scanner.nextInt();
-                    //primeiro laço
-                    if (respostaAgente == 1) {
+                    if (respostaAgente == 1) { //PRIMEIRO IF DO 2
                         System.out.println("\nResposta: minha mãe não sabe nem usar o controle direito, quem dirá definir alguma coisa...\n");
                         System.out.println("1- Agente: o que posso fazer é te ajudar a definir a Residência Netflix para que você volte a assistir");
                         System.out.println("2- Agente: Como o endereço dela está definido como Residência, posso te ajudar a trocar a localização e criar um assinante extra.");
                         System.out.println(menuResposta);
                         respostaAgente = scanner.nextInt();
-                        //Segundo laço intero
-                        if (respostaAgente == 1) {
+                        if (respostaAgente == 1) { // SEGUNDO IF DO 2
                             System.out.println("\nResposta: então avia que eu quero assistir\n");
                             System.out.println(resolucaoResidencia);
                             System.out.println("\nRafael Arduini: Você Ajuda o cliente a criar o assinante Extra.");
@@ -172,12 +180,8 @@ public class ErrosCliente extends Cliente {
                             System.out.println(resolucaoResidencia);
                             System.out.println(elogio);
                         }//final do segundo laço interno.
-                        // final do primeiro laço interno.
-                    } else {
-                        System.out.println("Cliente: E o que eu preciso fazer para voltar a assistir eu e ela?\n");
-                        System.out.println("Agente: se for usar a mesma conta posso ajudar a criar um assinante extra.");
-                        System.out.println(assinanteExtraExplicacao);
-                        System.out.println("\nCliente: ficou tudo explicadinho, então vou fazer um assinante extra, mas vai ser no email dela.");
+                    } else { // PRIMEIRO ELSE DO 2
+                        System.out.println("Cliente: Eu sou titular, minha mãe usa minha Netflix na casa dela.\n");
                         System.out.println("1- " + assinanteExtra);
                         System.out.println("2- Agente: Como o endereço dela está definido como Residência, posso te ajudar a trocar a localização e criar um assinante extra.");
                         System.out.println(menuResposta);
@@ -188,7 +192,8 @@ public class ErrosCliente extends Cliente {
                             System.out.println("Toma aquele recontato de milhões por não perceber que é no email da mãe dela e a principal ta lá!");
                             System.out.println(detalheInvestigacao);
                         } else {
-                            System.out.println("Arrumou Localização e criou assinante Extra, contato certinho, perfeito!");
+                            System.out.println("Rafael Arduini: Arrumou Localização e criou assinante Extra, contato certinho, perfeito!");
+                            System.out.println("Deixou a titular como Residência Netflix e os demais com Assinante extra!");
                             System.out.println(elogio);
                         }
                     }
@@ -255,9 +260,10 @@ public class ErrosCliente extends Cliente {
                     System.out.println("Cliente: muito obrigado pela informação meu amigo, já estava preocupado com minha serie.\n");
                     System.out.println(encerramento);
                 } setContaAtiva(false);
+                // END ERRO 2
             } else if (sorteio == 3) {
                     System.out.println(erro3);
-                    System.out.println("1- " + investigar5);
+                    System.out.println("1- " + investigar1);
                     System.out.println("2- " + investigar6);
                     System.out.println(menuResposta);
                     respostaAgente = scanner.nextInt();
@@ -320,7 +326,7 @@ public class ErrosCliente extends Cliente {
                         }
                     } else { //primeiro ELSE
                         System.out.println("Cliente: Ela e eu usamos na SmartTV e minha mãe no celular.");
-                        System.out.println("1- " + investigar5);
+                        System.out.println("1- " + investigar1);
                         System.out.println("2- Agente: Vocês usam no mesmo Wifi?");
                         System.out.println(menuResposta);
                         respostaAgente = scanner.nextInt();
@@ -393,17 +399,92 @@ public class ErrosCliente extends Cliente {
                     setContaAtiva(false); // Ou outra condição para encerrar o loop
                 } else if (sorteio == 4) {
                     System.out.println(erro4);
-                    System.out.println("1- " + investigar3);
+                    System.out.println("1- " + investigar5);
                     System.out.println("2- " + investigar4);
                     System.out.println(menuResposta);
                     respostaAgente = scanner.nextInt();
-                    if (respostaAgente == 1) {
-                        System.out.println("resposta de continuação vindo....");
-                    } else {
-                        System.out.println("resposta de continuação vindo....");
+                    if (respostaAgente == 1) { //PRIMEIRO IF DO 1
+                        System.out.println("Cliente: o que é check-in?");
+                        System.out.println("1- Agente: explicar em detalhes o check-in.");
+                        System.out.println("2- Agente: é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
+                        System.out.println(menuResposta);
+                        respostaAgente = scanner.nextInt();
+                        if (respostaAgente == 1) { // SEGUNDO IF DO 1
+                            System.out.println(checkIn);
+                            System.out.println("Rafael Arduini: parabéns, alinhou com cliente direitinho.");
+                            System.out.println("Contato rápido, com contexto e Objetivo, TMA baixo do jeito que tem que ser");
+                            System.out.println(elogio);
+                        } else { // SEGUNDO ELSE DO 1
+                            System.out.println("Rafael Arduini: a resolução do problema foi correta, mas o principal");
+                            System.out.println("detalhe não foi passado, que o celular que vai fazer o check-in");
+                            System.out.println("tem que estar conectado a mesma Wifi da SmartTV que está como Residência Netflix");
+                            System.out.println("Levou aquele RCR de milhões pq a cliente entrou pelos dados móveis.");
+                        } // FIM DO FLUXO 1
+                    } else { // INICIO ELSE DO 2
+                        System.out.println("Cliente: tenho duas TVs Smart.");
+                        System.out.println("1- Agente: na sua casa você usa em quais aparelhos?");
+                        System.out.println("2 - Agente: de quanto em quanto tempo você vai na sua loja?");
+                        System.out.println(menuResposta);
+                        respostaAgente = scanner.nextInt();
+                        if (respostaAgente == 1) { // PRIMEIRO IF DO 2
+                            System.out.println("Na minha casa eu uso na TV e no tablet, quem assiste é meu filho.");
+                            System.out.println("1- Agente: podemos mudar a localização principal da Residência Netflix para o trabalho.");
+                            System.out.println("2- Agente: podemos fazer um check-in.");
+                            if (respostaAgente == 1) { //SEGUNDO IF INTERNO DO 2
+                                System.out.println("Rafael Arduini: Nesse caso a mudança de localização não se aplica.");
+                                System.out.println("Se ele mudar a localização da Residência Netflix, ele perderá o acesso em casa");
+                                System.out.println(detalheInvestigacao);
+                            } else { // SEGUNDO ELSE INTERNO DO 2
+                                System.out.println("Cliente: o que é check-in?");
+                                System.out.println("1- Agente: explicar em detalhes o check-in.");
+                                System.out.println("2- Agente: é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
+                                System.out.println(menuResposta);
+                                respostaAgente = scanner.nextInt();
+                                if (respostaAgente == 1) {
+                                    System.out.println(checkIn);
+                                    System.out.println("Rafael Arduini: parabéns, alinhou com cliente direitinho.");
+                                    System.out.println("Contato rápido, com contexto e Objetivo, TMA baixo do jeito que tem que ser");
+                                    System.out.println(elogio);
+                                } else {
+                                    System.out.println("Rafael Arduini: a resolução do problema foi correta, mas o principal");
+                                    System.out.println("detalhe não foi passado, que o celular que vai fazer o check-in");
+                                    System.out.println("tem que estar conectado a mesma Wifi da SmartTV que está como Residência Netflix");
+                                    System.out.println("Levou aquele RCR de milhões pq a cliente entrou pelos dados móveis.");
+                                }
+                            }
+                        } else { // PRIMEIRO ELSE DO 2
+                            System.out.println("Cliente: quase todos os dias eu vou na minha loja.");
+                            System.out.println("1- Agente: Você pode fazer um check-in pra habilitar sua Netflix na loja.");
+                            System.out.println("2- " + assinanteExtra);
+                            System.out.println(menuResposta);
+                            respostaAgente = scanner.nextInt();
+                            if (respostaAgente == 1) {
+                                System.out.println("Cliente: o que é check-in?");
+                                System.out.println("1- Agente: explicar em detalhes o check-in.");
+                                System.out.println("2- Agente: é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
+                                System.out.println(menuResposta);
+                                respostaAgente = scanner.nextInt();
+                                if (respostaAgente == 1) {
+                                    System.out.println(checkIn);
+                                    System.out.println("Rafael Arduini: parabéns, alinhou com cliente direitinho.");
+                                    System.out.println("Contato rápido, com contexto e Objetivo, TMA baixo do jeito que tem que ser");
+                                    System.out.println(elogio);
+                                } else {
+                                    System.out.println("Rafael Arduini: a resolução do problema foi correta, mas o principal");
+                                    System.out.println("detalhe não foi passado, que o celular que vai fazer o check-in");
+                                    System.out.println("tem que estar conectado a mesma Wifi da SmartTV que está como Residência Netflix");
+                                    System.out.println("Levou aquele RCR de milhões pq a cliente entrou pelos dados móveis.");
+                                } // FIM DO IF DO SEGUNDO ELSE DO 2
+                            } else {
+                                System.out.println("Rafael Arduini: O Assinante extra resolveria o problema dela,");
+                                System.out.println("porém ela tem duas TVs Smarts e precisaria fazer 2 Assinantes extras...");
+                                System.out.println("Um simples check-in resolveria a situação dela");
+                                System.out.println(detalheInvestigacao);
+                            }
+                        } // FIM DO PRIMEIRO ELSE DO 2
                     }
                     setContaAtiva(false); // Ou outra condição para encerrar o loop
-                } else {
+                } else {//ESSE ELSE É PARA O SORTEIO COM NÚMERO 5
                     System.out.println(erro5);
                     System.out.println("1- " + investigar7);
                     System.out.println("2- " + investigar8);
