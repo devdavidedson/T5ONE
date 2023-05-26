@@ -33,7 +33,7 @@ public class Main {
         cliente.exibeDadosAgente();
 
         FluxoDeErros erro = new FluxoDeErros();
-        erro.iniciaLigacao();
+        erro.iniciaLigacao(cliente);
 
     }
 }
