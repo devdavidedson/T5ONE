@@ -62,6 +62,7 @@ public class ErrosCliente extends Cliente {
             : Cliente, volta para tela da nossa chamada aí!...
             Voltou? Ótimo, pode deixar que eu encerro por aqui. Tchau.""";
 
+
     public int getRespostaAgente() {
         return respostaAgente;
     }
@@ -72,6 +73,24 @@ public class ErrosCliente extends Cliente {
            this.respostaAgente = 1;
         } else if (respostaAgente == 2) {
             this.respostaAgente = 2;
+        } else {
+            System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
+            System.out.println("digite 1 ou 2 para selecionar opção:");
+            setRespostaAgente(); // Solicita novamente a resposta do usuário
+        }
+    }
+    public void setRespostaAgenteOpcional() {
+        this.respostaAgente = scanner.nextInt();
+        if (respostaAgente == 1) {
+            this.respostaAgente = 1;
+        } else if (respostaAgente == 2) {
+            this.respostaAgente = 2;
+        } else if (respostaAgente == 3) {
+            this.respostaAgente = 3;
+        } else {
+            System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
+            System.out.println("digite 1 ou 2 para selecionar opção:");
+            setRespostaAgente(); // Solicita novamente a resposta do usuário
         }
     }
 
