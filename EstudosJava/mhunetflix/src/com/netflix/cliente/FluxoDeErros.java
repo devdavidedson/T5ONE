@@ -179,7 +179,7 @@ public class FluxoDeErros extends ErrosCliente {
                 } else if (getRespostaAgente() == 2) {
                     System.out.println(cliente.getNome() + ": Ja veio novamente com a história de pagar pra assistir a minha Netflix?");
                     System.out.println(cliente.getNome() + ": O que danado é esse Assinante extra?");
-                    System.out.println( + cliente.getAgente() + getAssinanteExtraExplicacao());
+                    System.out.println(cliente.getAgente() + getAssinanteExtraExplicacao());
                     System.out.println(cliente.getNome() + ": Você disse 1 kilo eu num entendi 1 grama. Cancele logo a Netflix!");
                     System.out.println("\nRafael Arduini: Lembrem-se de fazer sempre as perguntas corretas de investigação");
                     System.out.println("Perguntar em que aparelhos assistir, deve ser a maior prioridade em todas as situações");
@@ -335,19 +335,19 @@ public class FluxoDeErros extends ErrosCliente {
         }//FIM do FLUXO
     }
     private void quartoErro(Cliente cliente) {
-        System.out.println(getErro4());
-        System.out.println("1- " + getInvestigar5());
-        System.out.println("2- " + getInvestigar4());
+        System.out.println(cliente.getNome() + getErro4());
+        System.out.println("1- " + cliente.getAgente() + getInvestigar5());
+        System.out.println("2- " + cliente.getAgente() + getInvestigar4());
         System.out.println(getMenuResposta());
         setRespostaAgente();
         if (getRespostaAgente() == 1) { //PRIMEIRO IF DO 1
-            System.out.println("Cliente: o que é check-in?");
-            System.out.println("1- " + getAgente() + ": explicar em detalhes o check-in.");
-            System.out.println("2- " + getAgente() + ": é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
+            System.out.println(cliente.getNome() + ": o que é check-in?");
+            System.out.println("1- " + cliente.getAgente() + ": explicar em detalhes o check-in.");
+            System.out.println("2- " + cliente.getAgente() + ": é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
             System.out.println(getMenuResposta());
             setRespostaAgente();
             if (getRespostaAgente() == 1) { // SEGUNDO IF DO 1
-                System.out.println(getCheckIn());
+                System.out.println(cliente.getAgente() + getCheckIn());
                 System.out.println("Rafael Arduini: parabéns, alinhou com cliente direitinho.");
                 System.out.println("Contato rápido, com contexto e Objetivo, TMA baixo do jeito que tem que ser");
                 System.out.println(getElogio());
@@ -358,15 +358,15 @@ public class FluxoDeErros extends ErrosCliente {
                 System.out.println("Levou aquele RCR de milhões pq a cliente entrou pelos dados móveis.");
             } // FIM DO FLUXO 1
         } else if (getRespostaAgente() == 2) { // INICIO ELSE DO 2
-            System.out.println("Cliente: tenho duas TVs Smart.");
-            System.out.println("1- " + getAgente() + ": na sua casa você usa em quais aparelhos?");
-            System.out.println("2- " + getAgente() + ": de quanto em quanto tempo você vai na sua loja?");
+            System.out.println(cliente.getNome() + ": tenho duas TVs Smart.");
+            System.out.println("1- " + cliente.getAgente() + ": na sua casa você usa em quais aparelhos?");
+            System.out.println("2- " + cliente.getAgente() + ": de quanto em quanto tempo você vai na sua loja?");
             System.out.println(getMenuResposta());
             setRespostaAgente();
             if (getRespostaAgente() == 1) { // PRIMEIRO IF DO 2
-                System.out.println("Na minha casa eu uso na TV e no tablet, quem assiste é meu filho.");
-                System.out.println("1- " + getAgente() + ": podemos mudar a localização principal da Residência Netflix para o trabalho.");
-                System.out.println("2- " + getAgente() + ": podemos fazer um check-in.");
+                System.out.println(cliente.getNome() + ": Na minha casa eu uso na TV e no tablet, quem assiste é meu filho.");
+                System.out.println("1- " + cliente.getAgente() + ": podemos mudar a localização principal da Residência Netflix para o trabalho.");
+                System.out.println("2- " + cliente.getAgente() + ": podemos fazer um check-in.");
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) { //SEGUNDO IF INTERNO DO 2
@@ -374,13 +374,13 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("Se ele mudar a localização da Residência Netflix, ele perderá o acesso em casa");
                     System.out.println(getDetalheInvestigacao());
                 } else if (getRespostaAgente() == 2) { // SEGUNDO ELSE INTERNO DO 2
-                    System.out.println("Cliente: o que é check-in?");
-                    System.out.println("1- " + getAgente() + ": explicar em detalhes o check-in.");
-                    System.out.println("2- " + getAgente() + ": é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
+                    System.out.println(cliente.getNome() + ": o que é check-in?");
+                    System.out.println("1- " + cliente.getAgente() + ": explicar em detalhes o check-in.");
+                    System.out.println("2- " + cliente.getAgente() + ": é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
                     System.out.println(getMenuResposta());
                     setRespostaAgente();
                     if (getRespostaAgente() == 1) {
-                        System.out.println(getCheckIn());
+                        System.out.println(cliente.getAgente() + getCheckIn());
                         System.out.println("Rafael Arduini: parabéns, alinhou com cliente direitinho.");
                         System.out.println("Contato rápido, com contexto e Objetivo, TMA baixo do jeito que tem que ser");
                         System.out.println(getElogio());
@@ -392,19 +392,19 @@ public class FluxoDeErros extends ErrosCliente {
                     }
                 }
             } else if (getRespostaAgente() == 2) { // PRIMEIRO ELSE DO 2
-                System.out.println("Cliente: quase todos os dias eu vou na minha loja.");
-                System.out.println("1- " + getAgente() + ": Você pode fazer um check-in pra habilitar sua Netflix na loja.");
-                System.out.println("2- " + getAssinanteExtra());
+                System.out.println(cliente.getNome() + ": quase todos os dias eu vou na minha loja.");
+                System.out.println("1- " + cliente.getAgente() + ": Você pode fazer um check-in pra habilitar sua Netflix na loja.");
+                System.out.println("2- " + cliente.getAgente() + getAssinanteExtra());
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) {
-                    System.out.println("Cliente: o que é check-in?");
-                    System.out.println("1- " + getAgente() + ": explicar em detalhes o check-in.");
-                    System.out.println("2- " + getAgente() + ": é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
+                    System.out.println(cliente.getNome() + ": o que é check-in?");
+                    System.out.println("1- " + cliente.getAgente() + ": explicar em detalhes o check-in.");
+                    System.out.println("2- " + cliente.getAgente() + ": é só entrar na Netflix pelo celular na sua casa e depois entrar na loja");
                     System.out.println(getMenuResposta());
                     setRespostaAgente();
                     if (getRespostaAgente() == 1) {
-                        System.out.println(getCheckIn());
+                        System.out.println(cliente.getAgente() + getCheckIn());
                         System.out.println("Rafael Arduini: parabéns, alinhou com cliente direitinho.");
                         System.out.println("Contato rápido, com contexto e Objetivo, TMA baixo do jeito que tem que ser");
                         System.out.println(getElogio());

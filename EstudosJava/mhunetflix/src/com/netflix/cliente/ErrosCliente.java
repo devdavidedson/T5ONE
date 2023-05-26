@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ErrosCliente extends Cliente {
     Scanner scanner = new Scanner(System.in);
-    private int sorteio = new Random().nextInt(1) +1;
+    private int sorteio = new Random().nextInt(4) +1;
     private String menuResposta = "\ndigite 1 ou 2 para selecionar opção:";
     private int respostaAgente = 0;
     private String erro1 = """
