@@ -211,9 +211,9 @@ public class FluxoDeErros extends ErrosCliente {
             System.out.println(getMenuResposta());
             setRespostaAgente();
             if (getRespostaAgente() == 1) {
-                System.out.println("Cliente: Sim! moramos juntas na mesma casa.");
-                System.out.println("1- " + getAgente() + ": então não existe problema nenhum, podem assistir a vontade!");
-                System.out.println("2- " + getAssinanteExtra());
+                System.out.println(cliente.getNome() + ": Sim! moramos juntas na mesma casa.");
+                System.out.println("1- " + cliente.getAgente() + ": então não existe problema nenhum, podem assistir a vontade!");
+                System.out.println("2- " + cliente.getAgente() + getAssinanteExtra());
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) {
@@ -222,9 +222,9 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("logo todos os aparelhos que ali se conectam, tem acesso a conta do Titular!");
                     System.out.println(getElogio());
                 } else if (getRespostaAgente() == 2) {
-                    System.out.println("Cliente: me explica direitinho o que é assinante Extra!");
-                    System.out.println("1- " + getAssinanteExtraExplicacao());
-                    System.out.println("2- " + getAgente() + ": Podemos também resolver com a localização principal na Residência Netflix.");
+                    System.out.println(cliente.getNome() + ": me explica direitinho o que é assinante Extra!");
+                    System.out.println("1- " + cliente.getAgente() + getAssinanteExtraExplicacao());
+                    System.out.println("2- " + cliente.getAgente() + ": Podemos também resolver com a localização principal na Residência Netflix.");
                     System.out.println(getMenuResposta());
                     setRespostaAgente();
                     if (getRespostaAgente() == 1) {
@@ -242,9 +242,9 @@ public class FluxoDeErros extends ErrosCliente {
                     }
                 }
             } else if (getRespostaAgente() == 2) {
-                System.out.println("Cliente: me explica direitinho o que é assinante Extra!");
-                System.out.println("1- " + getAssinanteExtraExplicacao());
-                System.out.println("2- " + getAgente() + ": Podemos também resolver com a localização principal na Residência Netflix.");
+                System.out.println(cliente.getNome() + ": me explica direitinho o que é assinante Extra!");
+                System.out.println("1- " + cliente.getAgente() + getAssinanteExtraExplicacao());
+                System.out.println("2- " + cliente.getAgente() + ": Podemos também resolver com a localização principal na Residência Netflix.");
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) {
@@ -262,21 +262,21 @@ public class FluxoDeErros extends ErrosCliente {
                 }
             }
         } else if (getRespostaAgente() == 2) { //primeiro ELSE
-            System.out.println("Cliente: Ela e eu usamos na SmartTV e minha mãe no celular.");
-            System.out.println("1- " + getInvestigar1());
-            System.out.println("2- " + getAgente() + ": Vocês usam no mesmo Wifi?");
+            System.out.println(cliente.getNome() + ": Ela e eu usamos na SmartTV e minha mãe no celular.");
+            System.out.println("1- " + cliente.getAgente() + getInvestigar1());
+            System.out.println("2- " + cliente.getAgente() + ": Vocês usam no mesmo Wifi?");
             System.out.println(getMenuResposta());
             setRespostaAgente();
             if (getRespostaAgente() == 1) {
-                System.out.println("Cliente: Eu sou o titular da conta e minha irmã e minha mãe usam uma tela cada.");
-                System.out.println("1- " + getAgente() + ": Vocês usam no mesmo Wifi?");
-                System.out.println("2- " + getAgente() + ": Se a Netflix definir a SmartTV da sua irmã como principal, você perderá acesso na sua TV.");
+                System.out.println(cliente.getNome() + ": Eu sou o titular da conta e minha irmã e minha mãe usam uma tela cada.");
+                System.out.println("1- " + cliente.getAgente() + ": Vocês usam no mesmo Wifi?");
+                System.out.println("2- " + cliente.getAgente() + ": Se a Netflix definir a SmartTV da sua irmã como principal, você perderá acesso na sua TV.");
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) {
-                    System.out.println("Cliente: Sim! moramos juntas na mesma casa.");
-                    System.out.println("1- " + getAgente() + ": então não existe problema nenhum, podem assistir a vontade!");
-                    System.out.println("2- " + getAssinanteExtra());
+                    System.out.println(cliente.getNome() + ": Sim! moramos juntas na mesma casa.");
+                    System.out.println("1- " + cliente.getAgente() + ": então não existe problema nenhum, podem assistir a vontade!");
+                    System.out.println("2- " + cliente.getAgente() + getAssinanteExtra());
                     System.out.println(getMenuResposta());
                     setRespostaAgente();
                     if (getRespostaAgente() == 1) {
@@ -293,19 +293,19 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println(getDetalheInvestigacao());
                     }
                 } else if (getRespostaAgente() == 2) {
-                    System.out.println("Cliente: E o que eu posso fazer pra evitar esse cenário?");
-                    System.out.println("1- " + getAssinanteExtra());
-                    System.out.println("2- " + getAgente() + ": Podemos também, definir a sua TV como principal para Residência Netflix!");
+                    System.out.println(cliente.getNome() + ": E o que eu posso fazer pra evitar esse cenário?");
+                    System.out.println("1- " + cliente.getAgente() + getAssinanteExtra());
+                    System.out.println("2- " + cliente.getAgente() + ": Podemos também, definir a sua TV como principal para Residência Netflix!");
                     System.out.println(getMenuResposta());
                     setRespostaAgente();
                     if (getRespostaAgente() == 1) {
-                        System.out.println("Devemos sempre nos atentar as perguntas investigativas, porém");
+                        System.out.println("Rafael Arduini: Devemos sempre nos atentar as perguntas investigativas, porém");
                         System.out.println("temos que ver as respostas, cliente estava com todos os aparelhos");
                         System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
                         System.out.println("logo nada deve ser feito!");
                         System.out.println(getDetalheInvestigacao());
                     } else if (getRespostaAgente() == 2) {
-                        System.out.println("Devemos sempre nos atentar as perguntas investigativas, porém");
+                        System.out.println("Rafael Arduini: Devemos sempre nos atentar as perguntas investigativas, porém");
                         System.out.println("temos que ver as respostas, cliente estava com todos os aparelhos");
                         System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
                         System.out.println("logo nada deve ser feito!");
@@ -313,9 +313,9 @@ public class FluxoDeErros extends ErrosCliente {
                     }
                 }
             } else if (getRespostaAgente() == 2) {
-                System.out.println("Cliente: Sim! moramos juntas na mesma casa.");
-                System.out.println("1- " + getAgente() + ": então não existe problema nenhum, podem assistir a vontade!");
-                System.out.println("2- " + getAssinanteExtra());
+                System.out.println(cliente.getNome() + ": Sim! moramos juntas na mesma casa.");
+                System.out.println("1- " + cliente.getAgente() + ": então não existe problema nenhum, podem assistir a vontade!");
+                System.out.println("2- " + cliente.getAgente() + getAssinanteExtra());
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) {
