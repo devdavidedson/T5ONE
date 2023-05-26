@@ -23,7 +23,7 @@ public class FluxoDeErros extends ErrosCliente {
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) { //terceiro IF do 1
-                    System.out.println(cliente.getNome() + "\n: Como eu faço pra voltar a assistir?");
+                    System.out.println(cliente.getNome() + ": Como eu faço pra voltar a assistir?");
                     System.out.println("\n1-" + cliente.getAgente() + ": Nós podemos definir sua TV como localização principal, e fazer um assinante Extra pra sua mãe.");
                     System.out.println("2- " + cliente.getAgente() + ": Vamos lá vou te ajudar a criar o assinante extra.");
                     System.out.println(getMenuResposta());
@@ -97,13 +97,13 @@ public class FluxoDeErros extends ErrosCliente {
             System.out.println(getMenuResposta());
             setRespostaAgente();
             if (getRespostaAgente() == 1) { //PRIMEIRO IF DO 2
-                System.out.println(cliente.getNome() + "\n: minha mãe não sabe nem usar o controle direito, quem dirá definir alguma coisa...\n");
+                System.out.println(cliente.getNome() + ": minha mãe não sabe nem usar o controle direito, quem dirá definir alguma coisa...\n");
                 System.out.println("1- " + cliente.getAgente() + ": o que posso fazer é te ajudar a definir a Residência Netflix para que você volte a assistir");
                 System.out.println("2- " + cliente.getAgente() + ": Como o endereço dela está definido como Residência, posso te ajudar a trocar a localização e criar um assinante extra.");
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) { // SEGUNDO IF DO 2
-                    System.out.println( cliente.getNome() + "\n: então avia que eu quero assistir\n");
+                    System.out.println( cliente.getNome() + ": então avia que eu quero assistir\n");
                     System.out.println( cliente.getAgente() + getResolucaoResidencia());
                     System.out.println("\nRafael Arduini: Você Ajuda o cliente a definir a localição principal dele");
                     System.out.println("Toma aquele recontato de milhões por deixar a mãe dele sem acesso.");
@@ -111,7 +111,7 @@ public class FluxoDeErros extends ErrosCliente {
                 } else if (getRespostaAgente() == 2) {
                     System.out.println(cliente.getNome() + ": Ai se eu fizer assinante extra vou poder assistir eu e ela?\n");
                     System.out.println(cliente.getAgente() + getAssinanteExtraExplicacao());
-                    System.out.println(cliente.getNome() + "\n: ficou tudo explicadinho, então vou fazer um assinante extra, mas vai ser no email dela.");
+                    System.out.println(cliente.getNome() + ": ficou tudo explicadinho, então vou fazer um assinante extra, mas vai ser no email dela.");
                     System.out.println(cliente.getAgente() + getResolucaoResidencia());
                     System.out.println(getElogio());
                 }//final do segundo laço interno.
@@ -137,77 +137,77 @@ public class FluxoDeErros extends ErrosCliente {
     }
 
     public void segundoErro(Cliente cliente) {
-        System.out.println(getErro2());
-        System.out.println("1- " + getInvestigar3());
-        System.out.println("2- " + getInvestigar4());
+        System.out.println(cliente.getNome() + getErro2());
+        System.out.println("1- " + cliente.getAgente() + getInvestigar3());
+        System.out.println("2- " + cliente.getAgente() + getInvestigar4());
         System.out.println(getMenuResposta());
         setRespostaAgente();
         if (getRespostaAgente() == 1) {
-            System.out.println("\nCliente: Eu pretendo ficar por volta de 1 mês lá.\n");
-            System.out.println("1- " + getAgente() + "É preciso fazer o check-in antes de sair de casa ta?");
-            System.out.println("2- " + getAgente() + "Em quais aparelhos você pretende assistir na viajem?");
+            System.out.println(cliente.getNome() + ": Eu pretendo ficar por volta de 1 mês lá.\n");
+            System.out.println("1- " + cliente.getAgente() + "É preciso fazer o check-in antes de sair de casa ta?");
+            System.out.println("2- " + cliente.getAgente() + "Em quais aparelhos você pretende assistir na viajem?");
             System.out.println(getMenuResposta());
             setRespostaAgente();
             if (getRespostaAgente() == 1) {
-                System.out.println("\nCliente: Como eu faço para realizar o procedimento.\n");
-                System.out.println(getCheckIn());
-                System.out.println("\nCliente: O que é Residência Netflix? Tem que fazer isso tudo pra assistir A MINHA NETFLIX?!");
-                System.out.println("\n1- " + getAgente() + ": O Wifi que sua SmartTV está conectada é definido como sua Residência Netflix");
-                System.out.println("2- Agente: Calma senhora, você pode optar por fazer um Assinante Extra.");
+                System.out.println(cliente.getNome() + ": Como eu faço para realizar o procedimento.\n");
+                System.out.println(cliente.getAgente() + getCheckIn());
+                System.out.println(cliente.getNome() + ": O que é Residência Netflix? Tem que fazer isso tudo pra assistir A MINHA NETFLIX?!");
+                System.out.println("\n1- " + cliente.getAgente() + ": O Wifi que sua SmartTV está conectada é definido como sua Residência Netflix");
+                System.out.println("2- " + cliente.getAgente()+  ": Calma senhora, você pode optar por fazer um Assinante Extra.");
                 System.out.println(getMenuResposta());
                 setRespostaAgente();
                 if (getRespostaAgente() == 1) {
-                    System.out.println("Cliente: mas eu só assisto por aparelhos móveis, meu filho usa o Tablet e eu vou viajar com o Note");
-                    System.out.println("Cliente: Olha o aborrecimento já está grande demais, cancele minha Netflix por favor...");
-                    System.out.println("Cliente: Nem se vocês me derem de graça eu quero mais.");
+                    System.out.println(cliente.getNome() + ": mas eu só assisto por aparelhos móveis, meu filho usa o Tablet e eu vou viajar com o Note");
+                    System.out.println(cliente.getNome() + ": Olha o aborrecimento já está grande demais, cancele minha Netflix por favor...");
+                    System.out.println(cliente.getNome() + ": Nem se vocês me derem de graça eu quero mais.");
 
                     if (getRespostaAgente() == 1) {
-                        System.out.println("\nCliente: A Netflix caiu muito de qualidade, eu vou entrar judicialmente por que antes não existia isso.\n");
-                        System.out.println( getAgente() + ": É necessário fazer o check-in antes de sair de casa ta? É algo do sistema!");
-                        System.out.println("\nCliente:Eu já desisti de assiste em viajem. vou cancelar depois.");
-                        System.out.println( getAgente() + ": Te ajudo em algo mais?");
+                        System.out.println(cliente.getNome() + ": A Netflix caiu muito de qualidade, eu vou entrar judicialmente por que antes não existia isso.\n");
+                        System.out.println(cliente.getAgente() + ": É necessário fazer o check-in antes de sair de casa ta? É algo do sistema!");
+                        System.out.println(cliente.getNome() + ":Eu já desisti de assiste em viajem. vou cancelar depois.");
+                        System.out.println(cliente.getAgente() + ": Te ajudo em algo mais?");
                         System.out.println("\nRafael Arduini: Lembrem-se de fazer sempre as perguntas corretas de investigação");
                         System.out.println("Perguntar em que aparelhos assistir, deve ser a maior prioridade em todas as situações");
                     } else if (getRespostaAgente() == 2) {
-                        System.out.println("Cliente: O Que danado é assinante extra? eu vou ter que pagar denovo pra assistir viajando?");
-                        System.out.println("Cliente: mas eu só assisto por aparelhos móveis, meu filho usa o Tablet e eu vou viajar com o Note");
-                        System.out.println("Cliente: Olha o aborrecimento já está grande demais, cancele minha Netflix por favor...");
-                        System.out.println("Cliente: Nem se vocês me derem de graça eu quero mais.");
+                        System.out.println(cliente.getNome() + ": O Que danado é assinante extra? eu vou ter que pagar denovo pra assistir viajando?");
+                        System.out.println(cliente.getNome() + ": mas eu só assisto por aparelhos móveis, meu filho usa o Tablet e eu vou viajar com o Note");
+                        System.out.println(cliente.getNome() + ": Olha o aborrecimento já está grande demais, cancele minha Netflix por favor...");
+                        System.out.println(cliente.getNome() + ": Nem se vocês me derem de graça eu quero mais.");
                         System.out.println("\nRafael Arduini: Lembrem-se de fazer sempre as perguntas corretas de investigação");
                         System.out.println("Perguntar em que aparelhos assistir, deve ser a maior prioridade em todas as situações");
                     }
                 } else if (getRespostaAgente() == 2) {
-                    System.out.println("Cliente: Ja veio novamente com a história de pagar pra assistir a minha Netflix?");
-                    System.out.println("Cliente: O que danado é esse Assinante extra?");
-                    System.out.println(getAssinanteExtraExplicacao());
-                    System.out.println("\nCliente: Você disse 1 kilo eu num entendi 1 grama. Cancele logo a Netflix!");
+                    System.out.println(cliente.getNome() + ": Ja veio novamente com a história de pagar pra assistir a minha Netflix?");
+                    System.out.println(cliente.getNome() + ": O que danado é esse Assinante extra?");
+                    System.out.println( + cliente.getAgente() + getAssinanteExtraExplicacao());
+                    System.out.println(cliente.getNome() + ": Você disse 1 kilo eu num entendi 1 grama. Cancele logo a Netflix!");
                     System.out.println("\nRafael Arduini: Lembrem-se de fazer sempre as perguntas corretas de investigação");
                     System.out.println("Perguntar em que aparelhos assistir, deve ser a maior prioridade em todas as situações");
                 }
             }  else if (getRespostaAgente() == 2) {
-                System.out.println("Cliente: Só vou assistir no notebook e no tablet.\n");
-                System.out.println( getAgente() + ": Pode ir tranquilo e assistir normalmente a sua Netflix!\n");
-                System.out.println("Cliente: muito obrigado pela informação meu amigo, já estava preocupado com minha serie.\n");
-                System.out.println(getEncerramento());
+                System.out.println(cliente.getNome() + ": Só vou assistir no notebook e no tablet.\n");
+                System.out.println(cliente.getAgente() + ": Pode ir tranquilo e assistir normalmente a sua Netflix!\n");
+                System.out.println(cliente.getNome() + ": muito obrigado pela informação meu amigo, já estava preocupado com minha serie.\n");
+                System.out.println(cliente.getAgente() + getEncerramento());
             }
         } else if (getRespostaAgente() == 2) {
-            System.out.println("Cliente: Só vou assistir no notebook e no tablet.\n");
-            System.out.println( getAgente() + ": Pode ir tranquilo e assistir normalmente a sua Netflix!\n");
-            System.out.println("Cliente: muito obrigado pela informação meu amigo, já estava preocupado com minha serie.\n");
-            System.out.println(getEncerramento());
+            System.out.println(cliente.getNome() + ": Só vou assistir no notebook e no tablet.\n");
+            System.out.println(cliente.getAgente() + ": Pode ir tranquilo e assistir normalmente a sua Netflix!\n");
+            System.out.println(cliente.getNome() + ": muito obrigado pela informação meu amigo, já estava preocupado com minha serie.\n");
+            System.out.println(cliente.getAgente() + getEncerramento());
         }
         // END ERRO 2
     }
     public void terceiroErro(Cliente cliente) {
-        System.out.println(getErro3());
-        System.out.println("1- " + getInvestigar1());
-        System.out.println("2- " + getInvestigar6());
+        System.out.println(cliente.getNome() + getErro3());
+        System.out.println("1- " + cliente.getAgente() + getInvestigar1());
+        System.out.println("2- " + cliente.getAgente() + getInvestigar6());
         System.out.println(getMenuResposta());
         setRespostaAgente();
         if (getRespostaAgente() == 1) {//PRIMEIRO IF
-            System.out.println("Cliente: Eu sou o titular da conta e minha irmã e minha mãe usam uma tela cada.");
-            System.out.println("1- " + getAgente() + ": Vocês usam no mesmo Wifi?");
-            System.out.println("2- " + getAgente() + ": Se a Netflix definir a SmartTV da sua irmã como principal, você perderá acesso na sua TV.");
+            System.out.println(cliente.getNome() + ": Eu sou o titular da conta e minha irmã e minha mãe usam uma tela cada.");
+            System.out.println("1- " + cliente.getAgente() + ": Vocês usam no mesmo Wifi?");
+            System.out.println("2- " + cliente.getAgente() + ": Se a Netflix definir a SmartTV da sua irmã como principal, você perderá acesso na sua TV.");
             System.out.println(getMenuResposta());
             setRespostaAgente();
             if (getRespostaAgente() == 1) {
