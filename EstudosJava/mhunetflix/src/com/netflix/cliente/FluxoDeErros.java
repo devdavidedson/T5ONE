@@ -334,6 +334,7 @@ public class FluxoDeErros extends ErrosCliente {
             }
         }//FIM do FLUXO
     }
+
     private void quartoErro(Cliente cliente) {
         System.out.println(cliente.getNome() + getErro4());
         System.out.println("1- " + cliente.getAgente() + getInvestigar5());
@@ -423,37 +424,205 @@ public class FluxoDeErros extends ErrosCliente {
             } // FIM DO PRIMEIRO ELSE DO 2
         }
     }
+    private void quintoErro(Cliente cliente) {
+        System.out.println(cliente.getNome() + getErro5());
+        System.out.println("1- " + cliente.getAgente() + getInvestigar9());
+        System.out.println("2- " + cliente.getAgente() + getInvestigar10());
+        System.out.println(getMenuResposta());
+        setRespostaAgente();
+        if (getRespostaAgente() == 1) {//A
+            System.out.println("Fluxo indefinido");
+        } else {/*//A
+            System.out.println(cliente.getNome() + ": 'Ocorreu um Erro, tente novamente mais tarde'. ");
+            System.out.println("1- " + cliente.getAgente() + ": Aparece alguma letra acompanhada de números?"); //OK
+            System.out.println("2- " + cliente.getAgente() + ": Você já tinha alguém vinculado anteriormente?"); //OK
+            System.out.println(getMenuResposta());
+            setRespostaAgente();
+            if (getRespostaAgente() == 1) {//A-Z
+                System.out.println(cliente.getNome() + ": Não, apenas essa mensagem.");
+                System.out.println("1- " + cliente.getAgente() + ": Só um momento que irei acionar o suporte.");
+                System.out.println("2- " + cliente.getAgente() + ": Ok, só um momento que irei verificar se o assinante extra está criado no sistema.");
+                System.out.println(getMenuResposta());
+                setRespostaAgente();
+                if (getRespostaAgente() == 1) {//Z-1
+                    System.out.println(cliente.getNome() + ": Tudo bem.");
+                    System.out.println("***CSR2 entra no chat e te envia a KB de Assinante Extra***\n");
+                    System.out.println("1- " + cliente.getAgente() + ": só um momento por gentileza. ***Ler KB de Assinante extra***");
+                    System.out.println("2- " + cliente.getAgente() + ": Como meu suporte não me respondeu de forma direta, tente mais tarde cliente!");
+                    System.out.println(getMenuResposta());
+                    setRespostaAgente();
+                    if (getRespostaAgente() == 1) {//Z-1-B
+                        System.out.println("1- " + cliente.getAgente() + ": só um momento por gentileza. ***Lendo KB de Assinante extra***");
+                        System.out.println("2- " + cliente.getAgente() + ": Como meu suporte não me respondeu de forma direta, tente mais tarde cliente!");
+                        System.out.println(getMenuResposta());
+                        setRespostaAgente();
+                        if (getRespostaAgente() == 1) {//Z-1-1-1
+                            System.out.println(cliente.getNome() + ": Tudo bem fique a vontade eu espero");
+                            System.out.println("1- " + cliente.getAgente() + ": Você já tinha alguém vinculado a esse assinante extra anteriormente?");
+                            System.out.println("2- " + cliente.getAgente() + ": É a sua primeira tentativa de vincular?");
+                            System.out.println(getMenuResposta());
+                            setRespostaAgente();
+                            if (getRespostaAgente() == 1) {//Z-1-1-2
+                                System.out.println(cliente.getNome() + ": Sim, eu anteriormente vinculei e tirei minha prima duas vezes e na terceira deu erro.");
+                                System.out.println("1- " + cliente.getAgente() + ": Entendi, então você não conseguirá vincular ninguém, pois o limite é de 2 por periodo de cobrança.");
+                                System.out.println("2- " + cliente.getAgente() + ": Nesse caso, você não vai poder adicionar novamente no mesmo periodo de cobrança.");
+                                System.out.println(getMenuResposta());
+                                setRespostaAgente();
+                                if (getRespostaAgente() == 1) {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                                    System.out.println(getElogio());
+                                } else {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                                    System.out.println(getElogio());
+                                }//fim desse fluxo
+                            } else {//Z-1-1-2
+                                System.out.println(cliente.getNome() + ": Não, eu anteriormente vinculei e tirei minha prima duas vezes e na terceira deu erro.");
+                                System.out.println("1- " + cliente.getAgente() + ": Ok, vou acionar o Suporte.");
+                                System.out.println("2- " + cliente.getAgente() + ": Nesse caso, você não vai poder adicionar novamente no mesmo periodo de cobrança.");
+                                System.out.println(getMenuResposta());
+                                setRespostaAgente();
+                                if (getRespostaAgente() == 1) {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("A investigação correta foi feita, porém o Expert, não leu corretamente a KB de assinante Extra.");
+                                } else {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                                    System.out.println(getElogio());
+                                }//fim desse fluxo
+                            }
+                        } else {//Z-1-1-1
+                            System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                            System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                            System.out.println("A investigação correta foi feita, porém o Expert, não leu corretamente a KB de assinante Extra.");
+                        } //FIM DESSE FLUXO
+                    } else {//Z-1-B
+                        System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                        System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                        System.out.println("A investigação correta foi feita, porém o Expert, não leu corretamente a KB de assinante Extra.");
+                        System.out.println(getDetalheInvestigacao());
+                    } // FIM DESSE FLUXO
+                } else {//Z-1
+                    System.out.println(cliente.getNome() + ": Tudo bem.");
+                    System.out.println("***O Assinante Extra está criado. Histórico de acesso tem 2 vinculos feitos e excluídos***\n");
+                    System.out.println("1- " + cliente.getAgente() + ": Ok, vou acionar o Suporte.");
+                    System.out.println("2- " + cliente.getAgente() + ": Nesse caso, você não vai poder adicionar novamente no mesmo periodo de cobrança.");
+                    System.out.println(getMenuResposta());
+                    setRespostaAgente();
+                    if (getRespostaAgente() == 1) {//Z-1-1
+                        System.out.println(cliente.getNome() + ": Tudo bem.");
+                        System.out.println("***CSR2 entra no chat e te envia a KB de Assinante Extra***\n");
+                        System.out.println("1- " + cliente.getAgente() + ": só um momento por gentileza. ***Lendo KB de Assinante extra***");
+                        System.out.println("2- " + cliente.getAgente() + ": Como meu suporte não me respondeu de forma direta, tente mais tarde cliente!");
+                        System.out.println(getMenuResposta());
+                        setRespostaAgente();
+                        if (getRespostaAgente() == 1) {//Z-1-1-1
+                            System.out.println(cliente.getNome() + ": Tudo bem fique a vontade eu espero");
+                            System.out.println("1- " + cliente.getAgente() + ": Você já tinha alguém vinculado a esse assinante extra anteriormente?");
+                            System.out.println("2- " + cliente.getAgente() + ": É a sua primeira tentativa de vincular?");
+                            System.out.println(getMenuResposta());
+                            setRespostaAgente();
+                            if (getRespostaAgente() == 1) {//Z-1-1-2
+                                System.out.println(cliente.getNome() + ": Sim, eu anteriormente vinculei e tirei minha prima duas vezes e na terceira deu erro.");
+                                System.out.println("1- " + cliente.getAgente() + ": Entendi, então você não conseguirá vincular ninguém, pois o limite é de 2 por periodo de cobrança.");
+                                System.out.println("2- " + cliente.getAgente() + ": Nesse caso, você não vai poder adicionar novamente no mesmo periodo de cobrança.");
+                                System.out.println(getMenuResposta());
+                                setRespostaAgente();
+                                if (getRespostaAgente() == 1) {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                                    System.out.println(getElogio());
+                                } else {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                                    System.out.println(getElogio());
+                                }//fim desse fluxo
+                            } else {//Z-1-1-2
+                                System.out.println(cliente.getNome() + ": Não, eu anteriormente vinculei e tirei minha prima duas vezes e na terceira deu erro.");
+                                System.out.println("1- " + cliente.getAgente() + ": Ok, vou acionar o Suporte.");
+                                System.out.println("2- " + cliente.getAgente() + ": Nesse caso, você não vai poder adicionar novamente no mesmo periodo de cobrança.");
+                                System.out.println(getMenuResposta());
+                                setRespostaAgente();
+                                if (getRespostaAgente() == 1) {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("A investigação correta foi feita, porém o Expert, não leu corretamente a KB de assinante Extra.");
+                                } else {
+                                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                                    System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                                    System.out.println(getElogio());
+                                }//fim desse fluxo
+                            }
+                        } else {//Z-1-1-1
+                            System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                            System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                            System.out.println("A investigação correta foi feita, porém o Expert, não leu corretamente a KB de assinante Extra.");
+                        } //FIM DESSE FLUXO
+                    } else {//Z-1-1
+                        System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                        System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                        System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                        System.out.println(getElogio());
+                    } //FIM DESSE FLUXO
+                }
+            } else {//A-Z
+                System.out.println(cliente.getNome() + ": Sim, eu anteriormente vinculei e tirei minha prima duas vezes e na terceira deu erro.");
+                System.out.println("1- " + cliente.getAgente() + ": Ok, vou acionar o Suporte.");
+                System.out.println("2- " + cliente.getAgente() + ": Nesse caso, você não vai poder adicionar novamente no mesmo periodo de cobrança.");
+                System.out.println(getMenuResposta());
+                setRespostaAgente();
+                if (getRespostaAgente() == 1) {//Z-2
+                    System.out.println(cliente.getNome() + ": Tudo bem.");
+                    System.out.println("***CSR2 entra no chat e te envia a KB de Assinante Extra***\n");
+                    System.out.println("1- " + cliente.getAgente() + ": só um momento por gentileza. ***Ler KB de Assinante extra***");
+                    System.out.println("2- " + cliente.getAgente() + ": Como meu suporte não me respondeu de forma direta, tente mais tarde cliente!");
+                    System.out.println(getMenuResposta());
+                    setRespostaAgente();
+                    //CONTINUAR NOVO Z-Y
+                } else {//Z-2 = FIM DO FLUXO
+                    System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
+                    System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
+                    System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
+                    System.out.println(getElogio());
+                }
+            }
+        */}
+    }
+
     public void iniciaLigacao(Cliente cliente) {
     while (cliente.getContaAtiva()) {
         if (getSorteio() == 1) {
             primeiroErro(cliente);
+            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
             cliente.setContaAtiva(false);
         } else if (getSorteio() == 2) {
             segundoErro(cliente);
+            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
             cliente.setContaAtiva(false);
         } else if (getSorteio() == 3) {
             terceiroErro(cliente);
+            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
             cliente.setContaAtiva(false);
         } else if (getSorteio() == 4) {
             quartoErro(cliente);
+            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
             cliente.setContaAtiva(false);
-        } else if (getSorteio() == 5) {//ESSE ELSE É PARA O SORTEIO COM NÚMERO 5
-            System.out.println(getErro5());
-            System.out.println("1- " + getInvestigar7());
-            System.out.println("2- " + getInvestigar8());
-            System.out.println(getMenuResposta());
-            setRespostaAgente();
-            if ( getRespostaAgente() == 1) {
-                System.out.println("resposta de continuação vindo....");
-            } else {
-                System.out.println("resposta de continuação vindo....");
-            }
-            setContaAtiva(false); // Ou outra condição para encerrar o loop
+        } else if (getSorteio() == 5) {
+            quintoErro(cliente);
+            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+            cliente.setContaAtiva(false);
         } else {
             System.out.println("Disturbio na força! Recarregue a Aplicação.");
             cliente.setContaAtiva(false); // Ou outra condição para encerrar o loop
         }
     }
-}
-
+    }
 }

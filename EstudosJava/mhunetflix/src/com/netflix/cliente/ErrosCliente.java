@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ErrosCliente extends Cliente {
     Scanner scanner = new Scanner(System.in);
-    private int sorteio = new Random().nextInt(4) +1;
+    private int sorteio =5;
     private String menuResposta = "\ndigite 1 ou 2 para selecionar opção:";
     private int respostaAgente = 0;
     private String erro1 = """
@@ -23,11 +23,8 @@ public class ErrosCliente extends Cliente {
             : Eu uso a Netflix que assinei aqui pra casa, na minha Loja,
             agora não vou poder mais usar?!
             """;
-    private String erro5 = """
-            : Oi, tudo bem? eu queria saber por que na casa da minha prima não está
-            mais funcionando a minha Netflix? Ela usa minha conta lá a muito tempo.
-            Meu plano é o de R$39,90.
-            """;
+    private String erro5 = ": Oi tudo bem? Estou com um erro na hora de vincular um Assinante Extra.";
+
     private String investigar1 = ": Quem é o titular da conta Netflix?";
     private String investigar2 = ": Mais alguém usa a sua conta Netflix?";
     private String investigar3 = ": Quanto tempo você pretende ficar viajando? É pra dentro do País?";
@@ -36,6 +33,8 @@ public class ErrosCliente extends Cliente {
     private String investigar6 = ": Em que aparelhos você e sua irmã usam a Netflix?";
     private String investigar7 = ": me fala em quais aparelhos ela(e) assiste.";
     private String investigar8 = ": Ela vai ter que fazer um assinante extra.";
+    private String investigar9 = ": Qual plano você possui?";
+    private String investigar10 = ": Qual nome do erro que está aparecendo?";
 
     private String resolucao1de1 = ":Sua mãe deve ter definido o endereço dela como sendo o principal da conta.";
 
@@ -56,7 +55,7 @@ public class ErrosCliente extends Cliente {
             - não pode ser cliente Ativo da Netflix (Que tenha conta Netflix em uso).
             - não pode ter assinante extra com perfil infantil.
             o extra pode tanto escolher criar um perfil novo ou transferir de alguma conta um já existente!""";
-    private String elogio = "ESSE ATENDIMENTO NÃO TEVE RCR E ESTÁ COM 100% DE CRES E CSAT.";
+    private String elogio = "\nESSE ATENDIMENTO NÃO TEVE RCR E ESTÁ COM 100% DE CRES E CSAT.";
     private String detalheinvestigacao = "\n***MUITA ATENÇÃO aos detalhes e perguntas investigativas para o Cliente!***";
     private String encerramento = """
             : Cliente, volta para tela da nossa chamada aí!...
@@ -92,6 +91,15 @@ public class ErrosCliente extends Cliente {
             System.out.println("digite 1 ou 2 para selecionar opção:");
             setRespostaAgente(); // Solicita novamente a resposta do usuário
         }
+    }
+
+
+    public String getInvestigar9() {
+        return investigar9;
+    }
+
+    public String getInvestigar10() {
+        return investigar10;
     }
 
     public int getSorteio() {
