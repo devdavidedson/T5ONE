@@ -18,8 +18,7 @@ public class Main {
         String nome = scanner.nextLine();
         cliente.setAgente(agente);
         cliente.setNome(nome);
-        cliente.setEmail(cliente.getNome() + "cliente@netflix.com.br");
-
+        cliente.setEmail(cliente.getNome().toLowerCase().replaceAll("\\s", "") + "cliente@netflix.com.br");
 
 
         Operadores operador = new Operadores();

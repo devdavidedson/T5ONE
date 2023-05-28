@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ErrosCliente extends Cliente {
     Scanner scanner = new Scanner(System.in);
-    private int sorteio =5;
+    private int sorteio = new Random().nextInt(6)+1;
     private String menuResposta = "\ndigite 1 ou 2 para selecionar opção:";
     private int respostaAgente = 0;
     private String erro1 = """
@@ -24,6 +24,12 @@ public class ErrosCliente extends Cliente {
             agora não vou poder mais usar?!
             """;
     private String erro5 = ": Oi tudo bem? Estou com um erro na hora de vincular um Assinante Extra.";
+    private String erro6 = """
+            : Eu liguei anteriormente para vocês e me falaram que o assinante extra, só
+            poderia vincular 2 contas por cobrança ou período de cobrança. Então eu quero
+            cancelar meu Assinante extra e receber meu reembolso! Não posso pagar por algo
+            que não irei usar,veja que absurdo não foi sequer me dado um aviso de que eram apenas 2!
+            """;
 
     private String investigar1 = ": Quem é o titular da conta Netflix?";
     private String investigar2 = ": Mais alguém usa a sua conta Netflix?";
@@ -31,10 +37,12 @@ public class ErrosCliente extends Cliente {
     private String investigar4 = ": Quais são os aparelhos em que você irá assistir?";
     private String investigar5 = ": Basta fazer um check-in?";
     private String investigar6 = ": Em que aparelhos você e sua irmã usam a Netflix?";
-    private String investigar7 = ": me fala em quais aparelhos ela(e) assiste.";
-    private String investigar8 = ": Ela vai ter que fazer um assinante extra.";
+    private String investigar7 = ": Você já cancelou adiado, não posso fazer nada a respeito!";
+    private String investigar8 = ": Na sua casa, quais aparelhos você assiste?";
     private String investigar9 = ": Qual plano você possui?";
     private String investigar10 = ": Qual nome do erro que está aparecendo?";
+    private String obiwanAssinanteEXTRA = ": **Obiwan:**\n**Email do CLIENTE definido como Assinante EXTRA.**\n";
+    private String obiwanTitular = ": **Obiwan:**\n**Email do CLIENTE definido como Titular da conta.**\n";
 
     private String resolucao1de1 = ":Sua mãe deve ter definido o endereço dela como sendo o principal da conta.";
 
@@ -94,13 +102,8 @@ public class ErrosCliente extends Cliente {
     }
 
 
-    public String getInvestigar9() {
-        return investigar9;
-    }
 
-    public String getInvestigar10() {
-        return investigar10;
-    }
+
 
     public int getSorteio() {
         return sorteio;
@@ -124,6 +127,10 @@ public class ErrosCliente extends Cliente {
     public String getErro5() {
         return erro5;
     }
+    public String getErro6() {
+        return erro6;
+    }
+
     public String getInvestigar1() {
         return investigar1;
     }
@@ -148,6 +155,20 @@ public class ErrosCliente extends Cliente {
     public String getInvestigar8() {
         return investigar8;
     }
+    public String getInvestigar9() {
+        return investigar9;
+    }
+    public String getInvestigar10() {
+        return investigar10;
+    }
+    public String getObiwanAssinanteEXTRA() {
+        return obiwanAssinanteEXTRA;
+    }
+    public String getObiwanTitular() {
+        return obiwanTitular;
+    }
+
+
     public String getResolucao1de1() {
         return resolucao1de1;
     }

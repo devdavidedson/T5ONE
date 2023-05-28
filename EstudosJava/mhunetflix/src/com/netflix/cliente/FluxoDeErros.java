@@ -34,14 +34,14 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println("\nRafael Arduini: PARABÉNS, alinhou certinho com a cliente.");
                         System.out.println("Você colocou o Titular como Residência Netflix e fez o Assinante extra para a mãe!");
                         System.out.println(getElogio());
-                    } else if (getRespostaAgente() == 2){ // QUARTO ELSE do 1
+                    } else { // QUARTO ELSE do 1
                         System.out.println(cliente.getNome() + ": Sim vamos criar um por favor!");
                         System.out.println("\nRafael Arduini: Aqui você cria o assinante extra de forma majestosa.");
                         System.out.println("Porém toma um RCR de MILHÕES por que não ajustou a Residência Netflix.");
                         System.out.println("Ela era a Titular da conta e criou no email da mãe dela e mesmo assim não conseguiu acesso");
                         System.out.println("***MUITA atenção as perguntas de investigação***");
                     }
-                } else if (getRespostaAgente() == 2) { //TERCEIRO ELSE DO 1
+                } else { //TERCEIRO ELSE DO 1
                     System.out.println(cliente.getAgente() + getAssinanteExtraExplicacao());
                     System.out.println("1- " + cliente.getAgente() + ": Você quer criar o Assinante extra?");
                     System.out.println("2- " + cliente.getAgente() + ": Ou você pode ficar assistindo de aparelhos móveis que é liberado.");
@@ -54,7 +54,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println("Ela era a Titular da conta e criou no email da mãe e mesmo assim não conseguiu acesso");
                         System.out.println("por que a mãe dela que deveria ser a Assinante Extra.");
                         System.out.println(getDetalheInvestigacao());
-                    } else if (getRespostaAgente() == 2) { // TERCEIRO ELSE DO 1 PRIMEIRO ELSE
+                    } else { // TERCEIRO ELSE DO 1 PRIMEIRO ELSE
                         System.out.println("Rafael Arduini: Você deve se atentar que a cliente ligou com erro");
                         System.out.println("de Residência Netflix > Localização principal, então ela quer");
                         System.out.println("Assistir na TV. (APARELHO MÓVEL NÃO PRECISA DE LOCALIZAÇÃO!");
@@ -62,7 +62,7 @@ public class FluxoDeErros extends ErrosCliente {
                     }
                 }
 
-            } else if (getRespostaAgente() == 2) { // SEGUNDO ELSE DO 1
+            } else { // SEGUNDO ELSE DO 1
                 System.out.println(cliente.getNome() + ": Eu e minha mãe usamos, mas na casa dela ta NORMAL!\n");
                 System.out.println("1- " + cliente.getAgente() + ": Então podemos criar um Assinante extra para ela e definir você como localização principal.");
                 System.out.println("2- " + cliente.getAgente() + getAssinanteExtra());
@@ -80,7 +80,7 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("Ela era a Titular da conta e criou no email da mãe e mesmo assim não conseguiu acesso");
                     System.out.println("por que a mãe dela que deveria ser a Assinante Extra.");
                     System.out.println(getDetalheInvestigacao());
-                } else if (getRespostaAgente() == 3) {
+                } else {
                     System.out.println(cliente.getNome() + ": Sim me ajude por favor!");
                     System.out.println("\nRafael Arduini: Aqui você cria o assinante extra de forma majestosa.");
                     System.out.println("Porém toma um RCR de MILHÕES por que não ajustou a Residência Netflix.");
@@ -90,7 +90,7 @@ public class FluxoDeErros extends ErrosCliente {
                 } // Final do primeiro laço internet.
             }
             //final do primeiro laço
-        } else if (getRespostaAgente() == 2) { // PRIMEIRO ELSE DO LAÇO 2
+        } else { // PRIMEIRO ELSE DO LAÇO 2
             System.out.println(cliente.getNome() + ": Assiste eu na minha casa e minha mãe na casa dela, mas moça na minha mãe ta NORMAL!");
             System.out.println("1- " + cliente.getAgente() + getResolucao1de1());
             System.out.println("2- " + cliente.getAgente() + getInvestigar1());
@@ -108,14 +108,14 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("\nRafael Arduini: Você Ajuda o cliente a definir a localição principal dele");
                     System.out.println("Toma aquele recontato de milhões por deixar a mãe dele sem acesso.");
                     System.out.println(getDetalheInvestigacao());
-                } else if (getRespostaAgente() == 2) {
+                } else {
                     System.out.println(cliente.getNome() + ": Ai se eu fizer assinante extra vou poder assistir eu e ela?\n");
                     System.out.println(cliente.getAgente() + getAssinanteExtraExplicacao());
                     System.out.println(cliente.getNome() + ": ficou tudo explicadinho, então vou fazer um assinante extra, mas vai ser no email dela.");
                     System.out.println(cliente.getAgente() + getResolucaoResidencia());
                     System.out.println(getElogio());
                 }//final do segundo laço interno.
-            } else if (getRespostaAgente() == 2) { // PRIMEIRO ELSE DO 2
+            } else { // PRIMEIRO ELSE DO 2
                 System.out.println(cliente.getNome() + ": Eu sou titular, minha mãe usa minha Netflix na casa dela.\n");
                 System.out.println("1- " + cliente.getAgente() + getAssinanteExtra());
                 System.out.println("2- " + cliente.getAgente() + ": Como o endereço dela está definido como Residência, posso te ajudar a trocar a localização e criar um assinante extra.");
@@ -126,7 +126,7 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("\nRafael Arduini: Você Ajuda o cliente a criar o assinante Extra.");
                     System.out.println("Toma aquele recontato de milhões por não perceber que é no email da mãe dela e a principal ta lá!");
                     System.out.println(getDetalheInvestigacao());
-                } else if (getRespostaAgente() == 2) {
+                } else {
                     System.out.println("Rafael Arduini: Arrumou Localização e criou assinante Extra, contato certinho, perfeito!");
                     System.out.println("Deixou a titular como Residência Netflix e os demais com Assinante extra!");
                     System.out.println(getElogio());
@@ -168,7 +168,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println(cliente.getAgente() + ": Te ajudo em algo mais?");
                         System.out.println("\nRafael Arduini: Lembrem-se de fazer sempre as perguntas corretas de investigação");
                         System.out.println("Perguntar em que aparelhos assistir, deve ser a maior prioridade em todas as situações");
-                    } else if (getRespostaAgente() == 2) {
+                    } else {
                         System.out.println(cliente.getNome() + ": O Que danado é assinante extra? eu vou ter que pagar denovo pra assistir viajando?");
                         System.out.println(cliente.getNome() + ": mas eu só assisto por aparelhos móveis, meu filho usa o Tablet e eu vou viajar com o Note");
                         System.out.println(cliente.getNome() + ": Olha o aborrecimento já está grande demais, cancele minha Netflix por favor...");
@@ -176,7 +176,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println("\nRafael Arduini: Lembrem-se de fazer sempre as perguntas corretas de investigação");
                         System.out.println("Perguntar em que aparelhos assistir, deve ser a maior prioridade em todas as situações");
                     }
-                } else if (getRespostaAgente() == 2) {
+                } else {
                     System.out.println(cliente.getNome() + ": Ja veio novamente com a história de pagar pra assistir a minha Netflix?");
                     System.out.println(cliente.getNome() + ": O que danado é esse Assinante extra?");
                     System.out.println(cliente.getAgente() + getAssinanteExtraExplicacao());
@@ -184,13 +184,13 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("\nRafael Arduini: Lembrem-se de fazer sempre as perguntas corretas de investigação");
                     System.out.println("Perguntar em que aparelhos assistir, deve ser a maior prioridade em todas as situações");
                 }
-            }  else if (getRespostaAgente() == 2) {
+            }  else {
                 System.out.println(cliente.getNome() + ": Só vou assistir no notebook e no tablet.\n");
                 System.out.println(cliente.getAgente() + ": Pode ir tranquilo e assistir normalmente a sua Netflix!\n");
                 System.out.println(cliente.getNome() + ": muito obrigado pela informação meu amigo, já estava preocupado com minha serie.\n");
                 System.out.println(cliente.getAgente() + getEncerramento());
             }
-        } else if (getRespostaAgente() == 2) {
+        } else {
             System.out.println(cliente.getNome() + ": Só vou assistir no notebook e no tablet.\n");
             System.out.println(cliente.getAgente() + ": Pode ir tranquilo e assistir normalmente a sua Netflix!\n");
             System.out.println(cliente.getNome() + ": muito obrigado pela informação meu amigo, já estava preocupado com minha serie.\n");
@@ -221,7 +221,7 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("Quando tem relação entre Wifi + smartTV + aparelho, é definido uma Residência Netflix.");
                     System.out.println("logo todos os aparelhos que ali se conectam, tem acesso a conta do Titular!");
                     System.out.println(getElogio());
-                } else if (getRespostaAgente() == 2) {
+                } else {
                     System.out.println(cliente.getNome() + ": me explica direitinho o que é assinante Extra!");
                     System.out.println("1- " + cliente.getAgente() + getAssinanteExtraExplicacao());
                     System.out.println("2- " + cliente.getAgente() + ": Podemos também resolver com a localização principal na Residência Netflix.");
@@ -233,7 +233,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
                         System.out.println("logo nada deve ser feito!");
                         System.out.println(getDetalheInvestigacao());
-                    } else if (getRespostaAgente() == 2) {
+                    } else {
                         System.out.println("Rafael Arduini: Devemos sempre nos atentar as perguntas investigativas, porém");
                         System.out.println("temos que ver as respostas, cliente estava com todos os aparelhos");
                         System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
@@ -241,7 +241,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println(getDetalheInvestigacao());
                     }
                 }
-            } else if (getRespostaAgente() == 2) {
+            } else {
                 System.out.println(cliente.getNome() + ": me explica direitinho o que é assinante Extra!");
                 System.out.println("1- " + cliente.getAgente() + getAssinanteExtraExplicacao());
                 System.out.println("2- " + cliente.getAgente() + ": Podemos também resolver com a localização principal na Residência Netflix.");
@@ -253,7 +253,7 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
                     System.out.println("logo nada deve ser feito!");
                     System.out.println(getDetalheInvestigacao());
-                } else if (getRespostaAgente() == 2) {
+                } else {
                     System.out.println("Rafael Arduini: Devemos sempre nos atentar as perguntas investigativas, porém");
                     System.out.println("temos que ver as respostas, cliente estava com todos os aparelhos");
                     System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
@@ -261,7 +261,7 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println(getDetalheInvestigacao());
                 }
             }
-        } else if (getRespostaAgente() == 2) { //primeiro ELSE
+        } else { //primeiro ELSE
             System.out.println(cliente.getNome() + ": Ela e eu usamos na SmartTV e minha mãe no celular.");
             System.out.println("1- " + cliente.getAgente() + getInvestigar1());
             System.out.println("2- " + cliente.getAgente() + ": Vocês usam no mesmo Wifi?");
@@ -284,7 +284,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println("Quando tem relação entre Wifi + smartTV + aparelho, é definido uma Residência Netflix.");
                         System.out.println("logo todos os aparelhos que ali se conectam, tem acesso a conta do Titular!");
                         System.out.println(getElogio());
-                    } else if (getRespostaAgente() == 2) {
+                    } else {
                         System.out.println("Rafael Arduini: Gente, a resolução já foi dada!");
                         System.out.println("Devemos sempre nos atentar as perguntas investigativas, porém");
                         System.out.println("temos que ver as respostas, cliente disse que todos os aparelhos estão");
@@ -292,7 +292,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println("logo nada deve ser feito!");
                         System.out.println(getDetalheInvestigacao());
                     }
-                } else if (getRespostaAgente() == 2) {
+                } else {
                     System.out.println(cliente.getNome() + ": E o que eu posso fazer pra evitar esse cenário?");
                     System.out.println("1- " + cliente.getAgente() + getAssinanteExtra());
                     System.out.println("2- " + cliente.getAgente() + ": Podemos também, definir a sua TV como principal para Residência Netflix!");
@@ -304,7 +304,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
                         System.out.println("logo nada deve ser feito!");
                         System.out.println(getDetalheInvestigacao());
-                    } else if (getRespostaAgente() == 2) {
+                    } else {
                         System.out.println("Rafael Arduini: Devemos sempre nos atentar as perguntas investigativas, porém");
                         System.out.println("temos que ver as respostas, cliente estava com todos os aparelhos");
                         System.out.println("conectados a mesma rede Wifi, então eles compõem uma Residência Netflix...");
@@ -312,7 +312,7 @@ public class FluxoDeErros extends ErrosCliente {
                         System.out.println(getDetalheInvestigacao());
                     }
                 }
-            } else if (getRespostaAgente() == 2) {
+            } else {
                 System.out.println(cliente.getNome() + ": Sim! moramos juntas na mesma casa.");
                 System.out.println("1- " + cliente.getAgente() + ": então não existe problema nenhum, podem assistir a vontade!");
                 System.out.println("2- " + cliente.getAgente() + getAssinanteExtra());
@@ -323,7 +323,7 @@ public class FluxoDeErros extends ErrosCliente {
                     System.out.println("Quando tem relação entre Wifi + smartTV + aparelho, é definido uma Residência Netflix.");
                     System.out.println("logo todos os aparelhos que ali se conectam, tem acesso a conta do Titular!");
                     System.out.println(getElogio());
-                } else if (getRespostaAgente() == 2) {
+                } else {
                     System.out.println("Rafael Arduini: Gente, a resolução já foi dada!");
                     System.out.println("Devemos sempre nos atentar as perguntas investigativas, porém");
                     System.out.println("temos que ver as respostas, cliente disse que todos os aparelhos estão");
@@ -360,7 +360,7 @@ public class FluxoDeErros extends ErrosCliente {
             } // FIM DO FLUXO 1
         } else if (getRespostaAgente() == 2) { // INICIO ELSE DO 2
             System.out.println(cliente.getNome() + ": tenho duas TVs Smart.");
-            System.out.println("1- " + cliente.getAgente() + ": na sua casa você usa em quais aparelhos?");
+            System.out.println("1- " + cliente.getAgente() + getInvestigar8());
             System.out.println("2- " + cliente.getAgente() + ": de quanto em quanto tempo você vai na sua loja?");
             System.out.println(getMenuResposta());
             setRespostaAgente();
@@ -663,12 +663,12 @@ public class FluxoDeErros extends ErrosCliente {
                             System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
                             System.out.println("A investigação correta foi feita, porém o Expert, não leu corretamente a KB de assinante Extra.");
                         } //FIM DESSE FLUXO
-                    } else {//Z-1-1
+                    } else { //Z-1-1
                         System.out.println("Rafael Arduini: Nesse caso, não tem o que ser feito pelo suporte, ela atingiu o limite de vinculo.");
                         System.out.println("Na KB de assinante extra, fala que o cliente só pode vincular duas vezes na vaga de Extra por periodo.");
                         System.out.println("O Agente demonstrou conhecimento sobre o produto e uma ótima leitura de KB.");
                         System.out.println(getElogio());
-                    } //FIM DESSE FLUXO 
+                    } //FIM DESSE FLUXO
                 }
             } else {//A-A
                 System.out.println(cliente.getNome() + ": Eu consigo, eu fui na página conta, abri o assinante e tento vincular por lá na parte de Assinante Extra.");
@@ -948,32 +948,60 @@ public class FluxoDeErros extends ErrosCliente {
         }
     }
 
-    public void iniciaLigacao(Cliente cliente) {
-    while (cliente.getContaAtiva()) {
-        if (getSorteio() == 1) {
-            primeiroErro(cliente);
-            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-            cliente.setContaAtiva(false);
-        } else if (getSorteio() == 2) {
-            segundoErro(cliente);
-            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-            cliente.setContaAtiva(false);
-        } else if (getSorteio() == 3) {
-            terceiroErro(cliente);
-            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-            cliente.setContaAtiva(false);
-        } else if (getSorteio() == 4) {
-            quartoErro(cliente);
-            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-            cliente.setContaAtiva(false);
-        } else if (getSorteio() == 5) {
-            quintoErro(cliente);
-            System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-            cliente.setContaAtiva(false);
-        } else {
-            System.out.println("Disturbio na força! Recarregue a Aplicação.");
-            cliente.setContaAtiva(false); // Ou outra condição para encerrar o loop
-        }
+    public void sextoErro(Cliente cliente) {
+        System.out.println(cliente.getNome() + getErro6());
+        System.out.println(cliente.getAgente() + getInvestigar7());
+        System.out.println(cliente.getAgente() + getInvestigar1());
+        System.out.println(getMenuResposta());
+        setRespostaAgente();
+        if (getRespostaAgente() == 1) {//A-1
+            System.out.println("Rafael Arduini: É Preciso fazer uma melhor investigação!");
+            System.out.println("Nunca devemos supor nada, nem tocar em informações de sistema");
+            System.out.println("que seja da Netflix, o cliente cancelou adiado, porém se estiver");
+            System.out.println("dentro da politica de reembolso e for SOLICITADO, o reembolso deve");
+            System.out.println("ser feito!");
+            System.out.println(getDetalheInvestigacao());
+            //FIM DO FLUXO A-1
+        } else {//A-2
+            System.out.println(cliente.getNome() + ": Sim sou eu o titular da conta!\n");
+            System.out.println(cliente.getAgente() + getObiwanAssinanteEXTRA());
+            System.out.println(cliente.getAgente() + ": O email informado não pertence ao Titular da conta!");
+            System.out.println(cliente.getAgente() + getInvestigar9());
+            System.out.println(getMenuResposta());
+            setRespostaAgente();//CONTINUAR DAQUI.
+        }//A-2 FIM DO FLUXO
     }
+
+    public void iniciaLigacao(Cliente cliente) {
+        while (cliente.getContaAtiva()) {
+            if (getSorteio() == 1) {
+                primeiroErro(cliente);
+                System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+                cliente.setContaAtiva(false);
+            } else if (getSorteio() == 2) {
+                segundoErro(cliente);
+                System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+                cliente.setContaAtiva(false);
+            } else if (getSorteio() == 3) {
+                terceiroErro(cliente);
+                System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+                cliente.setContaAtiva(false);
+            } else if (getSorteio() == 4) {
+                quartoErro(cliente);
+                System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+                cliente.setContaAtiva(false);
+            } else if (getSorteio() == 5) {
+                quintoErro(cliente);
+                System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+                cliente.setContaAtiva(false);
+            } else if (getSorteio() == 6) {
+                sextoErro(cliente);
+                System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+                cliente.setContaAtiva(false);
+            } else {
+                System.out.println("Disturbio na força! Recarregue a Aplicação.");
+                cliente.setContaAtiva(false); // Ou outra condição para encerrar o loop
+            }
+        }
     }
 }
