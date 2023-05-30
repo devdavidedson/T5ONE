@@ -950,8 +950,8 @@ public class FluxoDeErros extends ErrosCliente {
 
     public void sextoErro(Cliente cliente) {
         System.out.println(cliente.getNome() + getErro6());
-        System.out.println(cliente.getAgente() + getInvestigar7());
-        System.out.println(cliente.getAgente() + getInvestigar1());
+        System.out.println("1- " + cliente.getAgente() + getInvestigar7());
+        System.out.println("2- " + cliente.getAgente() + getInvestigar1());
         System.out.println(getMenuResposta());
         setRespostaAgente();
         if (getRespostaAgente() == 1) {//A-1
@@ -965,11 +965,177 @@ public class FluxoDeErros extends ErrosCliente {
         } else {//A-2
             System.out.println(cliente.getNome() + ": Sim sou eu o titular da conta!\n");
             System.out.println(cliente.getAgente() + getObiwanAssinanteEXTRA());
-            System.out.println(cliente.getAgente() + ": O email informado não pertence ao Titular da conta!");
-            System.out.println(cliente.getAgente() + getInvestigar9());
+            System.out.println("1- " + cliente.getAgente() + ": O email informado não pertence ao Titular da conta!");
+            System.out.println("2- " + cliente.getAgente() + getInvestigar9());
             System.out.println(getMenuResposta());
-            setRespostaAgente();//CONTINUAR DAQUI.
+            setRespostaAgente();
+            //A-1-A-B
+            //FIM DO FLUXO
+            //A-1-A-B
+            //FIM DO FLUXO
+            if (getRespostaAgente() == 1) {//A-2-1
+                System.out.println(cliente.getNome() + ": Esse é meu mesmo, minha irmã mandou o pedido pra eu vincular ele na conta dela.");
+            } else {//A-2-1
+                System.out.println("Atualmente meu plano é o de R$: 12,90 que eu pago com minha irmã");
+            }
+            System.out.println("1- " + cliente.getAgente() + ": Instruir o cliente de que ele não pode receber reembolso como assinante extra.");
+            System.out.println("2- " + cliente.getAgente() + ": Ok, irei fazer o cancelamente de imediato da Vaga e farei o reembolso.");
+            System.out.println(getMenuResposta());
+            setRespostaAgente();
+            if (getRespostaAgente() == 1) {//A-1-A-B
+                System.out.println("Rafael Arduini: Você fez o que poderia fazer nessa situação, instruiu o cliente de");
+                System.out.println("que apenas o TITULAR da conta pode pedir reembolso e fechamento do slot de assinante extra.");
+                System.out.println(getElogio());
+                //FIM DO FLUXO
+            } else {//A-1-A-B
+                System.out.println("Rafael Arduini: Se você identificou que o cliente não é o TITULAR");
+                System.out.println("da conta, você não deve fazer o cancelamente do slot de assinante, nem o Reembolso.");
+                System.out.println("Apenas o titular da conta tem autoridade para tal.");
+                System.out.println(getDetalheInvestigacao());
+                //FIM DO FLUXO
+            }
         }//A-2 FIM DO FLUXO
+    }
+
+    public void setimoErro(Cliente cliente) {
+        System.out.println(cliente.getNome() + getErro6());
+        System.out.println("1- " + cliente.getAgente() + getInvestigar7());
+        System.out.println("2- " + cliente.getAgente() + getInvestigar1());
+        System.out.println(getMenuResposta());
+        setRespostaAgente();
+        if (getRespostaAgente() == 1) {//A-1
+            System.out.println("Rafael Arduini: É Preciso fazer uma melhor investigação!");
+            System.out.println("Nunca devemos supor nada, nem tocar em informações de sistema");
+            System.out.println("que seja da Netflix, o cliente cancelou adiado, porém se estiver");
+            System.out.println("dentro da politica de reembolso e for SOLICITADO, o reembolso deve");
+            System.out.println("ser feito!");
+            System.out.println(getDetalheInvestigacao());
+            //FIM DO FLUXO A-1
+        } else {//A-2
+            System.out.println(cliente.getNome() + ": Sim sou eu o titular da conta!\n");
+            System.out.println(cliente.getAgente() + getObiwanTitular());
+            System.out.println("1- " + cliente.getAgente() + ": Verifiquei que está com cancelamente adiado o A. Extra.");
+            System.out.println("2- " + cliente.getAgente() + getInvestigar9());
+            System.out.println(getMenuResposta());
+            setRespostaAgente();
+            if (getRespostaAgente() == 1) {//A-2-1
+                System.out.println(cliente.getNome() + ": Sim, anteriormente eu cancelei pq não consegui vincular mais ninguém.");
+                System.out.println(cliente.getNome() + ": O Outro rapaz até explicou que só podia 2 vezes e eu aceitei.");
+                System.out.println(cliente.getNome() + ": Porém não foi me falado dos 2 vinculos, eu quero meu dinheiro devolta!");
+                System.out.println("1- " + cliente.getAgente() + getInvestigar7());
+                System.out.println("2- " + cliente.getAgente() + ": Entendo sua frustação, a quanto tempo você abriu o espaço de A. Extra?");
+                System.out.println(getMenuResposta());
+                setRespostaAgente();
+                if (getRespostaAgente() == 1) {//A-2-1-B
+                    System.out.println("Rafael Arduini: É Preciso fazer uma melhor investigação!");
+                    System.out.println("Nunca devemos supor nada, nem tocar em informações de sistema");
+                    System.out.println("que seja da Netflix, o cliente cancelou adiado, porém se estiver");
+                    System.out.println("dentro da politica de reembolso e for SOLICITADO, o reembolso deve");
+                    System.out.println("ser feito!");
+                    System.out.println(getDetalheInvestigacao());
+                    //FIM DO FLUXO A-2-1-B
+                } else {//A-2-1-B
+                    System.out.println(cliente.getNome() + ": Fiz todo o processo hoje! Tanto os vinculos, quanto o cancelamento.");
+                    System.out.println("1- " + cliente.getAgente() + getInvestigar7());
+                    System.out.println("2- " + cliente.getAgente() + ": Fica tranquila ta? O Valor referente a abertura do A. Extra");
+                    System.out.println("será feito, só 1 momento por gentileza");
+                    System.out.println(getMenuResposta());
+                    setRespostaAgente();
+                    if (getRespostaAgente() == 1) {//A-2-1-B-1
+                        System.out.println("Rafael Arduini: É Preciso fazer uma melhor investigação!");
+                        System.out.println("Nunca devemos supor nada, nem tocar em informações de sistema");
+                        System.out.println("que seja da Netflix, o cliente cancelou adiado, porém se estiver");
+                        System.out.println("dentro da politica de reembolso e for SOLICITADO, o reembolso deve");
+                        System.out.println("ser feito!");
+                        System.out.println(getDetalheInvestigacao());
+                        //FIM DO FLUXO A-2-1-B-1
+                    } else {//A-2-1-B-1
+                        System.out.println("*** Entrando no Sistema ***");
+                        System.out.println("*** Conta > 3 pontinhos do A. Extra > Cancelamente imediato > Arrependimento 7 dias.");
+                        System.out.println("*** Pagamentos > última cobrança feita pela Netflix > Engrenagem > Reembolso > Desmarcar");
+                        System.out.println("as opçãoes onde não dizem respeito ao reembolso solicitado > Ok! ***");
+                        System.out.println("\nRafael Arduini: Verificou o titular, investigou o motivo e se cabia para reembolso.");
+                        System.out.println("Atendimento limpo, lindo de se acompanhar e com resolução correta");
+                        System.out.println(getElogio());
+                        //FIM DO FLUXO A-2-1-B-1
+                    }
+                } //A-2-1-B FIM DO FLUXO
+            } else {//A-2-1
+                System.out.println(cliente.getNome() + ": Meu plano é o de R$: 39,90");
+                System.out.println("1- " + cliente.getAgente() + ": Verifiquei que está com cancelamente adiado o A. Extra.");
+                System.out.println("2- " + cliente.getAgente() + ": Faz quanto tempo que você criou a vaga de assinante extra?");
+                System.out.println(getMenuResposta());
+                setRespostaAgente();
+                if (getRespostaAgente() == 1) {//A-2-1
+                    System.out.println(cliente.getNome() + ": Sim, anteriormente eu cancelei pq não consegui vincular mais ninguém.");
+                    System.out.println(cliente.getNome() + ": O Outro rapaz até explicou que só podia 2 vezes e eu aceitei.");
+                    System.out.println(cliente.getNome() + ": Porém não foi me falado dos 2 vinculos, eu quero meu dinheiro devolta!");
+                    System.out.println("1- " + cliente.getAgente() + getInvestigar7());
+                    System.out.println("2- " + cliente.getAgente() + ": Entendo sua frustação, a quanto tempo você abriu o espaço de A. Extra?");
+                    System.out.println(getMenuResposta());
+                    setRespostaAgente();
+                    if (getRespostaAgente() == 1) {//A-2-1-B
+                        System.out.println("Rafael Arduini: É Preciso fazer uma melhor investigação!");
+                        System.out.println("Nunca devemos supor nada, nem tocar em informações de sistema");
+                        System.out.println("que seja da Netflix, o cliente cancelou adiado, porém se estiver");
+                        System.out.println("dentro da politica de reembolso e for SOLICITADO, o reembolso deve");
+                        System.out.println("ser feito!");
+                        System.out.println(getDetalheInvestigacao());
+                        //FIM DO FLUXO A-2-1-B
+                    } else {//A-2-1-B
+                        System.out.println(cliente.getNome() + ": Fiz todo o processo hoje! Tanto os vinculos, quanto o cancelamento.");
+                        System.out.println("1- " + cliente.getAgente() + getInvestigar7());
+                        System.out.println("2- " + cliente.getAgente() + ": Fica tranquila ta? O Valor referente a abertura do A. Extra");
+                        System.out.println("será feito, só 1 momento por gentileza");
+                        System.out.println(getMenuResposta());
+                        setRespostaAgente();
+                        if (getRespostaAgente() == 1) {//A-2-1-B-1
+                            System.out.println("Rafael Arduini: É Preciso fazer uma melhor investigação!");
+                            System.out.println("Nunca devemos supor nada, nem tocar em informações de sistema");
+                            System.out.println("que seja da Netflix, o cliente cancelou adiado, porém se estiver");
+                            System.out.println("dentro da politica de reembolso e for SOLICITADO, o reembolso deve");
+                            System.out.println("ser feito!");
+                            System.out.println(getDetalheInvestigacao());
+                            //FIM DO FLUXO A-2-1-B-1
+                        } else {//A-2-1-B-1
+                            System.out.println("*** Entrando no Sistema ***");
+                            System.out.println("*** Conta > 3 pontinhos do A. Extra > Cancelamente imediato > Arrependimento 7 dias.");
+                            System.out.println("*** Pagamentos > última cobrança feita pela Netflix > Engrenagem > Reembolso > Desmarcar");
+                            System.out.println("as opçãoes onde não dizem respeito ao reembolso solicitado > Ok! ***");
+                            System.out.println("\nRafael Arduini: Verificou o titular, investigou o motivo e se cabia para reembolso.");
+                            System.out.println("Atendimento limpo, lindo de se acompanhar e com resolução correta");
+                            System.out.println(getElogio());
+                            //FIM DO FLUXO A-2-1-B-1
+                        }
+                    } //A-2-1-B FIM DO FLUXO
+                } else {
+                    System.out.println(cliente.getNome() + ": Fiz todo o processo hoje! Tanto os vinculos, quanto o cancelamento.");
+                    System.out.println("1- " + cliente.getAgente() + getInvestigar7());
+                    System.out.println("2- " + cliente.getAgente() + ": Fica tranquila ta? O Valor referente a abertura do A. Extra");
+                    System.out.println("será feito, só 1 momento por gentileza");
+                    System.out.println(getMenuResposta());
+                    setRespostaAgente();
+                    if (getRespostaAgente() == 1) {//A-2-1-B-1
+                        System.out.println("Rafael Arduini: É Preciso fazer uma melhor investigação!");
+                        System.out.println("Nunca devemos supor nada, nem tocar em informações de sistema");
+                        System.out.println("que seja da Netflix, o cliente cancelou adiado, porém se estiver");
+                        System.out.println("dentro da politica de reembolso e for SOLICITADO, o reembolso deve");
+                        System.out.println("ser feito!");
+                        System.out.println(getDetalheInvestigacao());
+                        //FIM DO FLUXO A-2-1-B-1
+                    } else {//A-2-1-B-1
+                        System.out.println("*** Entrando no Sistema ***");
+                        System.out.println("*** Conta > 3 pontinhos do A. Extra > Cancelamente imediato > Arrependimento 7 dias.");
+                        System.out.println("*** Pagamentos > última cobrança feita pela Netflix > Engrenagem > Reembolso > Desmarcar");
+                        System.out.println("as opçãoes onde não dizem respeito ao reembolso solicitado > Ok! ***");
+                        System.out.println("\nRafael Arduini: Verificou o titular, investigou o motivo e se cabia para reembolso.");
+                        System.out.println("Atendimento limpo, lindo de se acompanhar e com resolução correta");
+                        System.out.println(getElogio());
+                        //FIM DO FLUXO A-2-1-B-1
+                    }
+                }
+            }
+        } // FIM DO FLUOX A-2
     }
 
     public void iniciaLigacao(Cliente cliente) {
@@ -996,6 +1162,10 @@ public class FluxoDeErros extends ErrosCliente {
                 cliente.setContaAtiva(false);
             } else if (getSorteio() == 6) {
                 sextoErro(cliente);
+                System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
+                cliente.setContaAtiva(false);
+            } else if (getSorteio() == 7) {
+                setimoErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
                 cliente.setContaAtiva(false);
             } else {

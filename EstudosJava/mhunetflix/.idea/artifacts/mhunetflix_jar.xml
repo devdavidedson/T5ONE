@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="mhunetflix:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mhunetflix_jar</output-path>
+    <root id="archive" name="mhunetflix.jar">
+      <element id="module-output" name="mhunetflix" />
+    </root>
+  </artifact>
+</component>
