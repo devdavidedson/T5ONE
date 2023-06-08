@@ -4,19 +4,24 @@ public class Desafio {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        double saldo = 2500;
+        int saldo;
+        String nome;
         int acessoMenu = 0;
+        System.out.println("Qual o seu Nome?");
+        nome = scanner.nextLine();
+        System.out.println("Qual o seu saldo inicial?");
+        saldo = scanner.nextInt();
+
         String menu = """
                 *********************************************
                 
                 Dados iniciais do cliente
-                Nome:                    David Edson
+                Nome:                    %s
                 tipo:                    Conta corrente
-                Saldo inicial:           R$: 2500
+                Saldo inicial:           R$: %d
                 
                 *********************************************
-                
-                """;
+                """.formatted(nome, saldo);
         String subMenu = """
                 1- Consultar Saldo.
                 2- Receber Depósito.

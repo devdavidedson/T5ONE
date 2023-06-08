@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="191a31de-a524-4344-835e-a42bd772cc76" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CartaoDeCredito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Compra/Compra.java" afterDir="false" />
-    </list>
+    <list default="true" id="191a31de-a524-4344-835e-a42bd772cc76" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +27,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
   <component name="RecentsManager">
