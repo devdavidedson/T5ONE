@@ -1,12 +1,13 @@
 package com.netflix.cliente;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class ErrosCliente extends Cliente {
     Scanner scanner = new Scanner(System.in);
     private int sorteio = new Random().nextInt(7) + 1;
-    private String menuResposta = "\ndigite 1 ou 2 para selecionar opção:";
+    private String menuResposta = "\nDigite 1 ou 2 para selecionar opção:";
     private int respostaAgente = 0;
     private String erro1 = """
             : Estou com um erro na minha Netflix, aparece que eu não estou na
@@ -75,14 +76,22 @@ public class ErrosCliente extends Cliente {
     }
 
     public void setRespostaAgente() {
-        this.respostaAgente = scanner.nextInt();
-        if (respostaAgente == 1) {
-           this.respostaAgente = 1;
-        } else if (respostaAgente == 2) {
-            this.respostaAgente = 2;
-        } else {
-            System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
-            System.out.println("digite 1 ou 2 para selecionar opção:");
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            this.respostaAgente = scanner.nextInt();
+
+            if (respostaAgente == 1 || respostaAgente == 2) {
+                // Opção válida, não faz nada
+            } else {
+                System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
+                System.out.println(getMenuResposta());
+                setRespostaAgente(); // Solicita novamente a resposta do usuário
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Entrada inválida! Por favor, digite um número inteiro.");
+            System.out.println(getMenuResposta());
+            scanner.nextLine(); // Limpa o buffer de entrada
             setRespostaAgente(); // Solicita novamente a resposta do usuário
         }
     }
