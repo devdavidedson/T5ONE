@@ -86,12 +86,12 @@ public class ErrosCliente extends Cliente {
             } else {
                 System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
                 System.out.println(getMenuResposta());
-                setRespostaAgente(); // Solicita novamente a resposta do usuário
+                setRespostaAgente();
             }
         } catch (InputMismatchException e) {
             System.out.println("Entrada inválida! Por favor, digite um número inteiro.");
             System.out.println(getMenuResposta());
-            scanner.nextLine(); // Limpa o buffer de entrada
+            scanner.nextLine();
             setRespostaAgente(); // Solicita novamente a resposta do usuário
         }
     }
