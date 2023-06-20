@@ -25,22 +25,23 @@ public class DadosPessoais extends ContaDoBanco {
         return cpf;
     }
 
-    boolean isValidCpf() {
-        String cpfDigitos = cpf.replaceAll("[^0-9]",""); // Remove tudo menos 0-9
-        return cpfDigitos.length() == 11;
+    private boolean isValidInput(String input) {
+        return input.matches("\\d+");
     }
+
     public void setCpf() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Confirme seu CPF: ");
-        this.cpf = scanner.next();
 
-        if (!isValidCpf()) {
-            System.out.println("CPF inválido. Digite 11 caracteres númericos.");
+        String input = scanner.next();
+
+        if (isValidInput(input)) {
+            this.cpf = input;
+        } else {
+            System.out.println("Entrada inválida! Digite apenas números.");
             setCpf();
         }
     }
-
-
 
 }
