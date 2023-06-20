@@ -1143,35 +1143,27 @@ public class FluxoDeErros extends ErrosCliente {
             if (getSorteio() == 1) {
                 primeiroErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-                cliente.setContaAtiva(false);
             } else if (getSorteio() == 2) {
                 segundoErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-                cliente.setContaAtiva(false);
             } else if (getSorteio() == 3) {
                 terceiroErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-                cliente.setContaAtiva(false);
             } else if (getSorteio() == 4) {
                 quartoErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-                cliente.setContaAtiva(false);
             } else if (getSorteio() == 5) {
                 quintoErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-                cliente.setContaAtiva(false);
             } else if (getSorteio() == 6) {
                 sextoErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-                cliente.setContaAtiva(false);
             } else if (getSorteio() == 7) {
                 setimoErro(cliente);
                 System.out.println("Continue aprendendo para se tornar um Mestre JEDI!");
-                cliente.setContaAtiva(false);
             } else {
                 System.out.println("Disturbio na força! Recarregue a Aplicação.");
-                cliente.setContaAtiva(false); // Ou outra condição para encerrar o loop
-            }
+            }   cliente.setContaAtiva(false); // Ou outra condição para encerrar o loop
         }
     }
 }
