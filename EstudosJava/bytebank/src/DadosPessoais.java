@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class DadosPessoais extends ContaDoBanco {
     private String nome;
-    private String profissao;
     private String cpf;
 
     public String getNome() {
@@ -11,14 +10,6 @@ public class DadosPessoais extends ContaDoBanco {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getProfissao() {
-        return profissao;
-    }
-
-    public void setProfissao(String profissao) {
-        this.profissao = profissao;
     }
 
     public String getCpf() {

@@ -5,7 +5,7 @@ public class ContaDoBanco {
     private double saldo;
     private int agencia;
     private int numeroDaConta;
-    private boolean titular;
+    DadosPessoais titular = new DadosPessoais();
 
 
     public double getSaldo() {
