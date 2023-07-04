@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ContaDoBanco primeiroCliente = new DadosPessoais();
+        ContaDoBanco primeiroCliente = new ContaDoBanco();
 
         System.out.println("Qual nome do Titular da conta? ");
         String nome = scanner.nextLine();
