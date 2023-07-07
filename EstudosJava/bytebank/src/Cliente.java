@@ -3,15 +3,6 @@ import java.util.Scanner;
 public class Cliente{
     private String nome;
     private String cpf;
-    private String profissao;
-
-    public String getProfissao() {
-        return profissao;
-    }
-
-    public void setProfissao(String profissao) {
-        this.profissao = profissao;
-    }
 
     public String getNome() {
         return nome;
