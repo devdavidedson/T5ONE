@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bytebank-herdado.iml" filepath="$PROJECT_DIR$/bytebank-herdado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bytebank-heranca.iml" filepath="$PROJECT_DIR$/bytebank-heranca.iml" />
     </modules>
   </component>
 </project>
