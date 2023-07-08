@@ -26,7 +26,4 @@ public abstract class Funcionario {
         this.salario = salario;
     }
 
-
-
-
 }
