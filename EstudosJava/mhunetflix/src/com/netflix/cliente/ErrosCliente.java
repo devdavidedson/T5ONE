@@ -96,23 +96,25 @@ public class ErrosCliente extends Cliente {
         }
     }
     public void setRespostaAgenteOpcional() {
-        this.respostaAgente = scanner.nextInt();
-        if (respostaAgente == 1 ) {
-            this.respostaAgente = 1;
-        } else if (respostaAgente == 2) {
-            this.respostaAgente = 2;
-        } else if (respostaAgente == 3) {
-            this.respostaAgente = 3;
-        } else {
-            System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
-            System.out.println("digite 1 ou 2 para selecionar opção:");
-            setRespostaAgente(); // Solicita novamente a resposta do usuário
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            this.respostaAgente = scanner.nextInt();
+
+            if (respostaAgente == 1 || respostaAgente == 2 || respostaAgente == 3) {
+                // Opção válida, não faz nada
+            } else {
+                System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
+                System.out.println(getMenuResposta());
+                setRespostaAgenteOpcional();
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Entrada inválida! Por favor, digite um número inteiro.");
+            System.out.println(getMenuResposta());
+            scanner.nextLine();
+            setRespostaAgenteOpcional(); // Solicita novamente a resposta do usuário
         }
     }
-
-
-
-
 
     public int getSorteio() {
         return sorteio;
