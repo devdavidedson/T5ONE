@@ -5,7 +5,7 @@ public class Fluxo {
         //tratativa para o erro do divisor 0.
         try {
             metodo1();
-        } catch (ArithmeticException | NullPointerException ex) {
+        } catch (ArithmeticException | NullPointerException | MinhaException ex) {
             String msg = ex.getMessage();
             System.out.println("Exception " + msg);
             ex.printStackTrace();
@@ -21,12 +21,8 @@ public class Fluxo {
 
     private static void metodo2() {
         System.out.println("Inicio do metodo2");
-        for(int i = 1; i <= 5; i++) {
-            System.out.println(i);
-            //int a = i/0;
-            Conta c = null;
-            c.deposita();
-        }
-        System.out.println("Fim do metodo2");
+        throw new MinhaException("deu muito errado");
+
+        //System.out.println("Fim do metodo2");
     }
 }
