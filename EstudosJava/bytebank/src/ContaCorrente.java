@@ -5,7 +5,7 @@ public class ContaCorrente extends Conta implements Tributavel{
     }
 
     @Override
-    public void saca(double valor) {
+    public void saca(double valor) throws SaldoInsuficienteException {
         double ValorJuros = valor + 0.2;
         super.saca(ValorJuros);
     }
