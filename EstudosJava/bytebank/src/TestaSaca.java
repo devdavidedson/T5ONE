@@ -1,0 +1,13 @@
+public class TestaSaca {
+
+    public static void main(String[] args) {
+
+        Conta conta = new ContaCorrente(123, 321);
+
+        conta.deposita(250);
+        conta.saca(240);
+
+        System.out.println(conta.getSaldo());
+    }
+
+}
