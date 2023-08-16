@@ -1,3 +1,5 @@
+package br.com.bytebank.modelo;
+
 public class CalculadoraImposto {
     private double totalImposto;
     public void registra(Tributavel t) {

@@ -1,3 +1,5 @@
+package br.com.bytebank.modelo;
+
 import java.util.Scanner;
 
 public class Cliente{
