@@ -76,4 +76,8 @@ public abstract class Conta {
         System.out.println("4- Sair.");
     }
 
+    @Override
+    public String toString() {
+        return "Numero: " + numero + " Agencia: " + agencia;
+    }
 }
