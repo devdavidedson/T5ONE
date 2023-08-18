@@ -15,10 +15,10 @@ public abstract class Conta {
         }
 
         Conta.total++;
-        System.out.println("O Total de contas é: " + Conta.total);
+        //System.out.println("O Total de contas é: " + Conta.total);
         this.agencia = agencia;
         this.numero = numero;
-        System.out.println("Estou criando uma conta " + this.numero);
+        //System.out.println("Estou criando uma conta " + this.numero);
     }
 
     public static int getTotal(){
