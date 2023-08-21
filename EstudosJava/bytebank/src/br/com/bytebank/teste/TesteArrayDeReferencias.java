@@ -2,10 +2,6 @@ package br.com.bytebank.teste;
 
 import br.com.bytebank.modelo.Conta;
 import br.com.bytebank.modelo.ContaCorrente;
-import br.com.bytebank.modelo.SaldoInsuficienteException;
-
-import java.util.Collections;
-import java.util.Objects;
 
 public class TesteArrayDeReferencias {
     public static void main(String[] args) {
