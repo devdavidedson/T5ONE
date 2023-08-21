@@ -1,6 +1,11 @@
 package br.com.bytebank.teste;
 
+import br.com.bytebank.modelo.Conta;
 import br.com.bytebank.modelo.ContaCorrente;
+import br.com.bytebank.modelo.SaldoInsuficienteException;
+
+import java.util.Collections;
+import java.util.Objects;
 
 public class TesteArrayDeReferencias {
     public static void main(String[] args) {
@@ -17,6 +22,14 @@ public class TesteArrayDeReferencias {
         System.out.println(contas[0].getAgencia());
         System.out.println(cc1.getAgencia());
         System.out.println(ref.getAgencia());
+
+        for (Conta conta : contas) {
+            if (conta == null) {
+                System.out.println("Erro: Slot sem valor atribuído.");
+            } else {
+                System.out.println(conta);
+            }
+        }
 
     }
 }
