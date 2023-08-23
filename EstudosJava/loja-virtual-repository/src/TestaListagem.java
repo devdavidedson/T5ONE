@@ -3,12 +3,15 @@ import java.sql.*;
 public class TestaListagem {
     public static void main(String[] args) throws SQLException {
 
-        CriaConexao connectionFactory = new CriaConexao();
+        //primeiro estabelecemos conexão com o Banco
+        ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection con = connectionFactory.recuperaConexao();
 
+        //depois fazemos um Statement para usar comandos no banco
         Statement stm = con.createStatement();
         stm.execute("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
 
+        //pegamos o resultado e lançamos no laço "While"
         ResultSet rsl = stm.getResultSet();
 
         while (rsl.next()){
