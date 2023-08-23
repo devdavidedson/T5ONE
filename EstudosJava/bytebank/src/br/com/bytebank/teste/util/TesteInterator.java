@@ -32,6 +32,6 @@ public class TesteInterator {
         while (it.hasNext()) {
             System.out.println(it.next());
         }
-        
+
     }
 }
