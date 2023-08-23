@@ -26,6 +26,5 @@ public class TesteArrayDeReferencias {
                 System.out.println(conta);
             }
         }
-
     }
 }

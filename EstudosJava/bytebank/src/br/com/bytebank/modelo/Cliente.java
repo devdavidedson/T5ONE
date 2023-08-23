@@ -2,9 +2,10 @@ package br.com.bytebank.modelo;
 
 import java.util.Scanner;
 
-public class Cliente{
+public class Cliente {
     private String nome;
     private String cpf;
+    private String profissao;
 
     public String getNome() {
         return nome;
@@ -17,11 +18,16 @@ public class Cliente{
     public String getCpf() {
         return cpf;
     }
-    //Verificando se a entrada tem apenas caracteres númericos.
+    public String getProfissao() {
+        return profissao;
+    }
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
     private boolean isValidInput(String input) {
         return input.matches("\\d+");
     }
-
+    //Verificando se a entrada tem apenas caracteres númericos.
     public void setCpf() {
         Scanner scanner = new Scanner(System.in);
 

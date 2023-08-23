@@ -1,10 +1,11 @@
 package br.com.bytebank.modelo;
 
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta> {
     protected double saldo;
     private int agencia;
     private int numero;
     private static int total = 0;
+    private Cliente titular;
 
     public Conta(int agencia, int numero) {
         if(agencia < 1) {
@@ -21,6 +22,14 @@ public abstract class Conta {
         //System.out.println("Estou criando uma conta " + this.numero);
     }
 
+    public void setTitular(Cliente titular){
+        this.titular = titular;
+    }
+
+    public Cliente getTitular(){
+        return this.titular;
+    }
+
     public static int getTotal(){
         return Conta.total;
     }
@@ -35,6 +44,7 @@ public abstract class Conta {
     public int getNumero(){
         return this.numero;
     }
+
 
     public void setNumero(int numero){
         if(numero <= 0) {
@@ -87,6 +97,11 @@ public abstract class Conta {
 
     @Override
     public String toString() {
-        return "Numero: " + numero + " Agencia: " + agencia;
+        return "Numero:" + numero + " Agencia:" + agencia + " Saldo:" + saldo;
+    }
+
+    @Override
+    public int compareTo(Conta o) {
+        return Integer.compare(this.numero, o.numero);
     }
 }

@@ -6,13 +6,14 @@ import br.com.bytebank.modelo.ContaCorrente;
 import br.com.bytebank.modelo.ContaPoupanca;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TesteArrayList {
     public static void main(String[] args) {
 
         //o sinal de <> é generics, dentro dela pode falar que a classe
         //generica é do tipo Conta!
-        ArrayList<Conta> lista = new ArrayList<>();
+        List<Conta> lista = new ArrayList<>();
 
         ContaCorrente cc = new ContaCorrente(23, 343);
         ContaPoupanca cp = new ContaPoupanca(24, 124);
