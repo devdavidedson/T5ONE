@@ -1,3 +1,5 @@
+import factory.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +21,7 @@ public class TestaInserir {
             Integer id = rst.getInt(1);
             System.out.println("O ID GERADO FOI: " + id);
         }
+        connection.close();
 
     }
 

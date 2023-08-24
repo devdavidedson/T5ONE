@@ -1,3 +1,5 @@
+import factory.ConnectionFactory;
+
 import java.sql.*;
 
 public class TestaListagem {
@@ -8,8 +10,8 @@ public class TestaListagem {
         Connection con = connectionFactory.recuperaConexao();
 
         //depois fazemos um Statement para usar comandos no banco
-        Statement stm = con.createStatement();
-        stm.execute("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+        PreparedStatement stm = con.prepareStatement("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+        stm.execute();
 
         //pegamos o resultado e lançamos no laço "While"
         ResultSet rsl = stm.getResultSet();
